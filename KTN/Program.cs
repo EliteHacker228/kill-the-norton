@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kill_the_Norton
+namespace KTN
 {
     static class Program
     {
