@@ -22,3 +22,7 @@
 - 7 зарядов - полная остановка времени. Эффект поначалу будет длиться 3 секунды.
 
 После прохождения уровня игрок будет получать очки, за которые можно будет прокачать устройство замедления времени. Например, увеличить время его действия, или понизить цену разблокировки каждой из фаз TS/SD.
+
+### Gameplay:
+
+![gameplay](https://psv4.userapi.com/c537232/u2000015243/docs/d28/56df28cb8652/file.gif?extra=YrZroMMxIRuPQ0jp2Nd-ZWJ2uZg3_nRxiQFmyAGidVBspVcgIo2o1kSKdTjIJQQjybN2QWcfZVMcLRO9uB_xnoqhFaeTQlo8K6VmlTSXN5BpDByFiOgjNNf-zFdsQSKKrs1P7yOwWElnidlJPqPywoWMiO40)
