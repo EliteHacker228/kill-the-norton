@@ -1,0 +1,15 @@
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\bin\Debug\netcoreapp3.1\Kill the Norton.exe
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\bin\Debug\netcoreapp3.1\Kill the Norton.deps.json
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\bin\Debug\netcoreapp3.1\Kill the Norton.runtimeconfig.json
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\bin\Debug\netcoreapp3.1\Kill the Norton.runtimeconfig.dev.json
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\bin\Debug\netcoreapp3.1\Kill the Norton.dll
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\bin\Debug\netcoreapp3.1\Kill the Norton.pdb
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill the Norton.csprojAssemblyReference.cache
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill the Norton.AssemblyInfoInputs.cache
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill the Norton.AssemblyInfo.cs
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill the Norton.csproj.CoreCompileInputs.cache
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill the Norton.dll
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill the Norton.pdb
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill the Norton.genruntimeconfig.cache
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill_the_Norton.Form1.resources
+C:\Users\Max\RiderProjects\Kill the Norton\Kill the Norton\obj\Debug\netcoreapp3.1\Kill the Norton.csproj.GenerateResource.cache
