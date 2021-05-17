@@ -49,15 +49,15 @@
             // 
             this.label1.Location = new System.Drawing.Point(625, 490);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 94);
+            this.label1.Size = new System.Drawing.Size(369, 74);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(625, 600);
+            this.label2.Location = new System.Drawing.Point(625, 584);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(369, 98);
+            this.label2.Size = new System.Drawing.Size(369, 130);
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
             // 

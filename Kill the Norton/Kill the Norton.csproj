@@ -7,4 +7,23 @@
         <UseWindowsForms>true</UseWindowsForms>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Views" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Model\**" />
+      <Compile Remove="Entities\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Model\**" />
+      <EmbeddedResource Remove="Entities\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Model\**" />
+      <None Remove="Entities\**" />
+    </ItemGroup>
+
 </Project>
