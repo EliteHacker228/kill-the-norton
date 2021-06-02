@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Kill_the_Norton.Entities;
@@ -27,7 +28,7 @@ namespace Kill_the_Norton.Calculations
             return false;
         }
 
-        public static bool IsCollided(Bullet bullet, Game game, Form form)
+        public static bool IsCollided(Bullet bullet, Game game, Form form, List<Enemy> enemies)
         {
             var bulletX = (bullet.OwnCoordinates.X + bullet.SpeedDelta.X);
             var bulletY = (bullet.OwnCoordinates.Y + bullet.SpeedDelta.Y);
@@ -42,6 +43,17 @@ namespace Kill_the_Norton.Calculations
                                     "\n"
                                     + "Собственные координаты пули: " + (int) bullet.OwnCoordinates.X + " " +
                                     (int) bullet.OwnCoordinates.Y;
+
+            foreach (var enemy in enemies)
+            {
+                if (bullet.OwnCoordinates.X == enemy.Cooridantes.X && bullet.OwnCoordinates.X == enemy.Cooridantes.X)
+                {
+                    if (bullet.OwnCoordinates.Y == enemy.Cooridantes.Y && bullet.OwnCoordinates.Y == enemy.Cooridantes.Y)
+                    {
+                        return true;
+                    }
+                }
+            }
 
             try
             {

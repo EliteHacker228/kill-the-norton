@@ -7,5 +7,6 @@ namespace Kill_the_Norton.Entities
         public static readonly Image PlayerSprite = Image.FromFile("C:\\Users\\Max\\Desktop\\turbokiller.png");
         public static readonly Image AsphaltSprite = Image.FromFile("C:\\Users\\Max\\Desktop\\asphaltHR.png");
         public static readonly Image WallSprite = Image.FromFile("C:\\Users\\Max\\Desktop\\wallblockHR.png");
+        public static readonly Image EnemySprite = Image.FromFile("C:\\Users\\Max\\Desktop\\enemy.png");
     }
 }

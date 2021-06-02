@@ -16,6 +16,22 @@ namespace Kill_the_Norton.Presenters
 
         //public Bullet? bullet;
         public List<Bullet> bullets = new List<Bullet>();
+        public List<Enemy> enemies = new List<Enemy>();
+
+        public GamePresenter(int[,] map)
+        {
+            for (var x = 0; x < map.GetLength(0); x++)
+            {
+                for (var y = 0; y < map.GetLength(1); y++)
+                {
+                    if (map[x, y] == 9)
+                    {
+                        enemies.Add(new Enemy(new Point(y * 64, x * 64)));
+                        map[x, y] = 1;
+                    }
+                }
+            }
+        }
 
         public void DrawMap(Graphics gameGraphic)
         {
@@ -126,10 +142,10 @@ namespace Kill_the_Norton.Presenters
         {
             if (bullets.Count != 0)
             {
-                bullets.RemoveAll(x => GameMath.IsCollided(x, Game, form));
+                bullets.RemoveAll(x => GameMath.IsCollided(x, Game, form, enemies));
                 foreach (var bullet in bullets)
                 {
-                    if (!GameMath.IsCollided(bullet, Game, form))
+                    if (!GameMath.IsCollided(bullet, Game, form, enemies))
                     {
                         var bulletOwnCoordinates = bullet.OwnCoordinates;
                         bulletOwnCoordinates.X += bullet.SpeedDelta.X * bullet.Speed;
