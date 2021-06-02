@@ -126,6 +126,7 @@ namespace Kill_the_Norton.Presenters
         {
             if (bullets.Count != 0)
             {
+                bullets.RemoveAll(x => GameMath.IsCollided(x, Game, form));
                 foreach (var bullet in bullets)
                 {
                     if (!GameMath.IsCollided(bullet, Game, form))
