@@ -108,7 +108,7 @@ namespace Kill_the_Norton.Presenters
         {
             var bullet = new Bullet();
             bullet.Target = new Point(e.X, e.Y);
-            
+
             //bullet.RenderCoordinates = new Point(Game.Player.Cooridantes.X - Game.Player.Delta.X - 64,
             //    Game.Player.Cooridantes.Y - Game.Player.Delta.Y - 64);
 
@@ -146,6 +146,13 @@ namespace Kill_the_Norton.Presenters
                     playerCooridantes.X -= Game.Player.Speed;
                     Game.Player.Cooridantes = playerCooridantes;
 
+                    foreach (var bullet in bullets)
+                    {
+                        var coords = bullet.OwnCoordinates;
+                        coords.X += Game.Player.Speed;
+                        bullet.OwnCoordinates = coords;
+                    }
+
                     if (playerCooridantes.X > 55 &&
                         playerCooridantes.X < Game.Level.SideOfMapObject * Game.Level.MapWidth)
                     {
@@ -165,6 +172,13 @@ namespace Kill_the_Norton.Presenters
                     var playerCooridantes = Game.Player.Cooridantes;
                     playerCooridantes.X += Game.Player.Speed;
                     Game.Player.Cooridantes = playerCooridantes;
+
+                    foreach (var bullet in bullets)
+                    {
+                        var coords = bullet.OwnCoordinates;
+                        coords.X -= Game.Player.Speed;
+                        bullet.OwnCoordinates = coords;
+                    }
 
                     if (playerCooridantes.X > Game.Level.SideOfMapObject &&
                         playerCooridantes.X < Game.Level.SideOfMapObject * Game.Level.MapWidth)
@@ -186,6 +200,13 @@ namespace Kill_the_Norton.Presenters
                     playerPlayerCooridantes.Y += Game.Player.Speed;
                     Game.Player.Cooridantes = playerPlayerCooridantes;
 
+                    foreach (var bullet in bullets)
+                    {
+                        var coords = bullet.OwnCoordinates;
+                        coords.Y -= Game.Player.Speed;
+                        bullet.OwnCoordinates = coords;
+                    }
+
                     if (Game.Player.Cooridantes.Y > Game.Level.SideOfMapObject &&
                         Game.Player.Cooridantes.Y < Game.Level.SideOfMapObject * Game.Level.MapHeight)
                     {
@@ -205,6 +226,13 @@ namespace Kill_the_Norton.Presenters
                     var playerPlayerCooridantes = Game.Player.Cooridantes;
                     playerPlayerCooridantes.Y -= Game.Player.Speed;
                     Game.Player.Cooridantes = playerPlayerCooridantes;
+
+                    foreach (var bullet in bullets)
+                    {
+                        var coords = bullet.OwnCoordinates;
+                        coords.Y += Game.Player.Speed;
+                        bullet.OwnCoordinates = coords;
+                    }
 
                     if (Game.Player.Cooridantes.Y > 55 && Game.Player.Cooridantes.Y <
                         Game.Level.SideOfMapObject * Game.Level.MapHeight)

@@ -119,7 +119,7 @@ namespace Kill_the_Norton
                 {
                     gameScreen.Graphics.FillEllipse(Brushes.Yellow, bullet.OwnCoordinates.X,
                         bullet.OwnCoordinates.Y, 16, 16);
-                    gameScreen.Graphics.DrawLine(Pens.Yellow, _game.Player.Cooridantes, bullet.Target);
+                    //gameScreen.Graphics.DrawLine(Pens.Yellow, _game.Player.Cooridantes, bullet.Target);
                 }
 
 
