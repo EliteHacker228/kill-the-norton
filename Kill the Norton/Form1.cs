@@ -128,6 +128,15 @@ namespace Kill_the_Norton
                 foreach (var enemy in _gamePresenter.enemies)
                 {
                     gameScreen.Graphics.DrawImage(Resources.EnemySprite, enemy.Cooridantes.X -_game.Player.Delta.X, enemy.Cooridantes.Y - _game.Player.Delta.Y);
+                    
+                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X -_game.Player.Delta.X,
+                        enemy.Cooridantes.Y -_game.Player.Delta.Y, 8, 8);
+                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X -_game.Player.Delta.X + 64,
+                        enemy.Cooridantes.Y -_game.Player.Delta.Y, 8, 8);
+                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X -_game.Player.Delta.X,
+                        enemy.Cooridantes.Y -_game.Player.Delta.Y + 64, 8, 8);
+                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X -_game.Player.Delta.X + 64,
+                        enemy.Cooridantes.Y -_game.Player.Delta.Y + 64, 8, 8);
                 }
             }
         }

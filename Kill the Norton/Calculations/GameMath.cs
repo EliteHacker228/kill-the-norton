@@ -46,9 +46,13 @@ namespace Kill_the_Norton.Calculations
 
             foreach (var enemy in enemies)
             {
-                if (bullet.OwnCoordinates.X == enemy.Cooridantes.X && bullet.OwnCoordinates.X == enemy.Cooridantes.X)
+                var xLeftLimit = enemy.Cooridantes.X;
+                var xRightLimit = enemy.Cooridantes.X + 64;
+                var yTopLimit = enemy.Cooridantes.Y;
+                var yBottomLimit = enemy.Cooridantes.Y + 64;
+                if (bullet.OwnCoordinates.X + game.Player.Delta.X >= xLeftLimit && bullet.OwnCoordinates.X + game.Player.Delta.X <= xRightLimit)
                 {
-                    if (bullet.OwnCoordinates.Y == enemy.Cooridantes.Y && bullet.OwnCoordinates.Y == enemy.Cooridantes.Y)
+                    if (bullet.OwnCoordinates.Y + game.Player.Delta.Y >= yTopLimit && bullet.OwnCoordinates.Y + game.Player.Delta.Y <= yBottomLimit)
                     {
                         return true;
                     }
