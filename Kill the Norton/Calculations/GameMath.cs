@@ -65,14 +65,14 @@ namespace Kill_the_Norton.Calculations
             return false;
         }
 
-        /*public static PointF GetDelta(Bullet bullet)
+        public static PointF GetDelta(Bullet bullet)
         {
-            var sideX = bullet.Target.X - bullet.RenderCoordinates.X;
-            var sideY = bullet.Target.Y - bullet.RenderCoordinates.Y;
+            var sideX = bullet.Target.X - bullet.OwnCoordinates.X;
+            var sideY = bullet.Target.Y - bullet.OwnCoordinates.Y;
             var k = Math.Sqrt(sideX * sideX + sideY * sideY);
             var deltaX = (float) (sideX / k);
             var deltaY = (float) (sideY / k);
             return new PointF(deltaX, deltaY);
-        }*/
+        }
     }
 }
