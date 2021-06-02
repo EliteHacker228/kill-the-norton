@@ -96,29 +96,29 @@ namespace Kill_the_Norton
         {
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        protected override void OnPaint(PaintEventArgs gameScreen)
         {
-            Graphics gameGraphic = e.Graphics;
+            Graphics gameGraphic = gameScreen.Graphics;
             _gamePresenter.DrawMap(gameGraphic);
 
-            Bitmap bitmap = new Bitmap(_game.Player.Sprite.Width, _game.Player.Sprite.Height);
-            Graphics g = Graphics.FromImage(bitmap);
-            g.TranslateTransform(bitmap.Width / 2, bitmap.Height / 2);
-            g.RotateTransform(_game.Player.Angle);
-            g.TranslateTransform(-bitmap.Width / 2, -bitmap.Height / 2);
-            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            Bitmap playerBitmap = new Bitmap(_game.Player.Sprite.Width, _game.Player.Sprite.Height);
+            Graphics playerGraphics = Graphics.FromImage(playerBitmap);
+            playerGraphics.TranslateTransform(playerBitmap.Width / 2, playerBitmap.Height / 2);
+            playerGraphics.RotateTransform(_game.Player.Angle);
+            playerGraphics.TranslateTransform(-playerBitmap.Width / 2, -playerBitmap.Height / 2);
+            playerGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
-            g.DrawImage(_game.Player.Sprite, 0, 0);
-            e.Graphics.TranslateTransform(_game.Player.PlayerCooridantes.X, _game.Player.PlayerCooridantes.Y);
-            e.Graphics.DrawImage(bitmap, -bitmap.Width / 2, -bitmap.Height / 2);
+            playerGraphics.DrawImage(_game.Player.Sprite, 0, 0);
+            gameScreen.Graphics.TranslateTransform(_game.Player.Cooridantes.X, _game.Player.Cooridantes.Y);
+            gameScreen.Graphics.DrawImage(playerBitmap, -playerBitmap.Width / 2, -playerBitmap.Height / 2);
 
 
             if (_gamePresenter.bullets.Count != 0)
             {
                 foreach (var bullet in _gamePresenter.bullets)
                 {
-                    e.Graphics.FillEllipse(Brushes.Yellow, bullet.Coordinates.X,
-                        bullet.Coordinates.Y, 16, 16);
+                    gameScreen.Graphics.FillEllipse(Brushes.Yellow, bullet.RenderCoordinates.X,
+                        bullet.RenderCoordinates.Y, 16, 16);
                 }
 
 

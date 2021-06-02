@@ -16,8 +16,8 @@ namespace Kill_the_Norton.Calculations
 
         public static bool IsCollided(int dx, int dy, Game game)
         {
-            var playerX = (game.Player.PlayerCooridantes.X + dx);
-            var playerY = (game.Player.PlayerCooridantes.Y + dy);
+            var playerX = (game.Player.Cooridantes.X + dx);
+            var playerY = (game.Player.Cooridantes.Y + dy);
 
             var processedX = (playerX + game.Player.Delta.X) / 64;
             var processedY = (playerY + game.Player.Delta.Y) / 64;
@@ -29,13 +29,15 @@ namespace Kill_the_Norton.Calculations
         
         public static bool IsCollided(Bullet bullet, Game game, Form form)
         {
-            var bulletX = (bullet.Coordinates.X + bullet.SpeedDelta.X);
-            var bulletY = (bullet.Coordinates.Y + bullet.SpeedDelta.Y);
+            var bulletX = (bullet.RenderCoordinates.X + bullet.SpeedDelta.X);
+            var bulletY = (bullet.RenderCoordinates.Y + bullet.SpeedDelta.Y);
 
             var processedX = (int)Math.Round((bulletX) / 16);
             var processedY = (int)Math.Round((bulletY) / 16);
 
-            form.Controls[0].Text = processedX + " " + processedY;
+            form.Controls[2].Text = "Преобразованные координаты пули: " + processedX + " " + processedY + "\n"
+                                    + "Координаты отрисовки координаты пули: " + (int)bullet.RenderCoordinates.X + " " + (int)bullet.RenderCoordinates.Y + "\n"
+                                    + "Собственные координаты пули: " + (int)bullet.OwnCoordinates.X + " " + (int)bullet.OwnCoordinates.Y;
 
             //if (game.Level.Map[processedY, processedX] == 2)
             //    return true;  
@@ -44,8 +46,8 @@ namespace Kill_the_Norton.Calculations
 
         public static bool IsCollided(int dx, int dy, Game game, Label label)
         {
-            var playerX = (game.Player.PlayerCooridantes.X + dx);
-            var playerY = (game.Player.PlayerCooridantes.Y + dy);
+            var playerX = (game.Player.Cooridantes.X + dx);
+            var playerY = (game.Player.Cooridantes.Y + dy);
 
             var processedX = (playerX + game.Player.Delta.X) / 64;
             var processedY = (playerY + game.Player.Delta.Y) / 64;
@@ -65,8 +67,8 @@ namespace Kill_the_Norton.Calculations
 
         public static PointF GetDelta(Bullet bullet)
         {
-            var sideX = bullet.Target.X - bullet.Coordinates.X;
-            var sideY = bullet.Target.Y - bullet.Coordinates.Y;
+            var sideX = bullet.Target.X - bullet.RenderCoordinates.X;
+            var sideY = bullet.Target.Y - bullet.RenderCoordinates.Y;
             var k = Math.Sqrt(sideX * sideX + sideY * sideY);
             var deltaX =  (float)(sideX / k);
             var deltaY =  (float)(sideY / k);
