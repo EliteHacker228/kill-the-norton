@@ -109,16 +109,16 @@ namespace Kill_the_Norton
             playerGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
             playerGraphics.DrawImage(_game.Player.Sprite, 0, 0);
-            gameScreen.Graphics.TranslateTransform(_game.Player.Cooridantes.X, _game.Player.Cooridantes.Y);
-            gameScreen.Graphics.DrawImage(playerBitmap, -playerBitmap.Width / 2, -playerBitmap.Height / 2);
+            //gameScreen.Graphics.TranslateTransform(_game.Player.Cooridantes.X, _game.Player.Cooridantes.Y);
+            gameScreen.Graphics.DrawImage(playerBitmap, _game.Player.Cooridantes.X - 32, _game.Player.Cooridantes.Y - 32);
 
 
             if (_gamePresenter.bullets.Count != 0)
             {
                 foreach (var bullet in _gamePresenter.bullets)
                 {
-                    gameScreen.Graphics.FillEllipse(Brushes.Yellow, bullet.RenderCoordinates.X,
-                        bullet.RenderCoordinates.Y, 16, 16);
+                    gameScreen.Graphics.FillEllipse(Brushes.Yellow, bullet.OwnCoordinates.X,
+                        bullet.OwnCoordinates.Y, 16, 16);
                 }
 
 

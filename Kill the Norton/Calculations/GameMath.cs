@@ -26,18 +26,18 @@ namespace Kill_the_Norton.Calculations
                 return true;
             return false;
         }
-        
+
         public static bool IsCollided(Bullet bullet, Game game, Form form)
         {
-            var bulletX = (bullet.RenderCoordinates.X + bullet.SpeedDelta.X);
-            var bulletY = (bullet.RenderCoordinates.Y + bullet.SpeedDelta.Y);
+            var bulletX = (bullet.OwnCoordinates.X + bullet.SpeedDelta.X);
+            var bulletY = (bullet.OwnCoordinates.Y + bullet.SpeedDelta.Y);
 
-            var processedX = (int)Math.Round((bulletX) / 16);
-            var processedY = (int)Math.Round((bulletY) / 16);
+            var processedX = (int) Math.Round((bulletX) / 16);
+            var processedY = (int) Math.Round((bulletY) / 16);
 
             form.Controls[2].Text = "Преобразованные координаты пули: " + processedX + " " + processedY + "\n"
-                                    + "Координаты отрисовки координаты пули: " + (int)bullet.RenderCoordinates.X + " " + (int)bullet.RenderCoordinates.Y + "\n"
-                                    + "Собственные координаты пули: " + (int)bullet.OwnCoordinates.X + " " + (int)bullet.OwnCoordinates.Y;
+                                    + "Собственные координаты пули: " + (int) bullet.OwnCoordinates.X + " " +
+                                    (int) bullet.OwnCoordinates.Y;
 
             //if (game.Level.Map[processedY, processedX] == 2)
             //    return true;  
@@ -65,14 +65,14 @@ namespace Kill_the_Norton.Calculations
             return false;
         }
 
-        public static PointF GetDelta(Bullet bullet)
+        /*public static PointF GetDelta(Bullet bullet)
         {
             var sideX = bullet.Target.X - bullet.RenderCoordinates.X;
             var sideY = bullet.Target.Y - bullet.RenderCoordinates.Y;
             var k = Math.Sqrt(sideX * sideX + sideY * sideY);
-            var deltaX =  (float)(sideX / k);
-            var deltaY =  (float)(sideY / k);
+            var deltaX = (float) (sideX / k);
+            var deltaY = (float) (sideY / k);
             return new PointF(deltaX, deltaY);
-        }
+        }*/
     }
 }

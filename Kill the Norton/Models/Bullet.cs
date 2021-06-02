@@ -5,7 +5,7 @@ namespace Kill_the_Norton.Entities
     public class Bullet
     {
         public Point Target { get; set; }
-        public PointF RenderCoordinates { get; set; }
+        //public PointF RenderCoordinates { get; set; }
         public PointF OwnCoordinates { get; set; }
         public PointF SpeedDelta { get; set; }
         public PointF Delta { get; set; }
