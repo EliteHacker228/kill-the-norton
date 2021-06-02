@@ -32,15 +32,27 @@ namespace Kill_the_Norton.Calculations
             var bulletX = (bullet.OwnCoordinates.X + bullet.SpeedDelta.X);
             var bulletY = (bullet.OwnCoordinates.Y + bullet.SpeedDelta.Y);
 
-            var processedX = (int) Math.Round((bulletX) / 16);
-            var processedY = (int) Math.Round((bulletY) / 16);
+            /*var processedX = (int) Math.Round((bulletX) / 16);
+            var processedY = (int) Math.Round((bulletY) / 16);*/
 
-            form.Controls[2].Text = "Преобразованные координаты пули: " + processedX + " " + processedY + "\n"
+            var processedX = (bulletX + game.Player.Delta.X) / 64;
+            var processedY = (bulletY + game.Player.Delta.Y) / 64;
+
+            form.Controls[2].Text = "Преобразованные координаты пули: " + (int) processedX + " " + (int) processedY +
+                                    "\n"
                                     + "Собственные координаты пули: " + (int) bullet.OwnCoordinates.X + " " +
                                     (int) bullet.OwnCoordinates.Y;
 
-            //if (game.Level.Map[processedY, processedX] == 2)
-            //    return true;  
+            try
+            {
+                if (game.Level.Map[(int) processedY, (int) processedX] == 2)
+                    return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
             return false;
         }
 
