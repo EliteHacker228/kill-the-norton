@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Kill_the_Norton.Calculations;
 using Kill_the_Norton.Entities;
@@ -142,10 +143,11 @@ namespace Kill_the_Norton.Presenters
         {
             if (bullets.Count != 0)
             {
-                bullets.RemoveAll(x => GameMath.IsCollided(x, Game, form, enemies));
+                //bullets.RemoveAll(x => GameMath.IsCollided(x, Game, form, enemies).Item1);
+
                 foreach (var bullet in bullets)
                 {
-                    if (!GameMath.IsCollided(bullet, Game, form, enemies))
+                    if (!GameMath.IsCollided(bullet, Game, form, enemies).Item1)
                     {
                         var bulletOwnCoordinates = bullet.OwnCoordinates;
                         bulletOwnCoordinates.X += bullet.SpeedDelta.X * bullet.Speed;
@@ -153,11 +155,25 @@ namespace Kill_the_Norton.Presenters
                         bullet.OwnCoordinates = bulletOwnCoordinates;
                     }
                 }
+
+                var bulletsToDelete = bullets.Select(x => x)
+                    .Where(x => GameMath.IsCollided(x, Game, form, enemies).Item1).ToList();
+
+                var result = bullets.Select(x => GameMath.IsCollided(x, Game, form, enemies));
+                foreach (var element in result)
+                {
+                    enemies.Remove(element.Item2);
+                }
+
+                foreach (var bullet in bulletsToDelete)
+                {
+                    bullets.Remove(bullet);
+                }
             }
 
             if (Game.Player.GoLeft)
             {
-                if (!GameMath.IsCollided(-Game.Player.Speed, 0, Game))
+                if (!GameMath.IsCollided(-Game.Player.Speed, 0, Game, enemies))
                 {
                     var playerCooridantes = Game.Player.Cooridantes;
                     playerCooridantes.X -= Game.Player.Speed;
@@ -184,7 +200,7 @@ namespace Kill_the_Norton.Presenters
 
             if (Game.Player.GoRight)
             {
-                if (!GameMath.IsCollided(+Game.Player.Speed, 0, Game))
+                if (!GameMath.IsCollided(+Game.Player.Speed, 0, Game, enemies))
                 {
                     var playerCooridantes = Game.Player.Cooridantes;
                     playerCooridantes.X += Game.Player.Speed;
@@ -211,7 +227,7 @@ namespace Kill_the_Norton.Presenters
 
             if (Game.Player.GoBackward)
             {
-                if (!GameMath.IsCollided(0, +Game.Player.Speed, Game))
+                if (!GameMath.IsCollided(0, +Game.Player.Speed, Game, enemies))
                 {
                     var playerPlayerCooridantes = Game.Player.Cooridantes;
                     playerPlayerCooridantes.Y += Game.Player.Speed;
@@ -238,7 +254,7 @@ namespace Kill_the_Norton.Presenters
 
             if (Game.Player.GoForward)
             {
-                if (!GameMath.IsCollided(0, -Game.Player.Speed, Game))
+                if (!GameMath.IsCollided(0, -Game.Player.Speed, Game, enemies))
                 {
                     var playerPlayerCooridantes = Game.Player.Cooridantes;
                     playerPlayerCooridantes.Y -= Game.Player.Speed;
