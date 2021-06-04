@@ -74,7 +74,8 @@ namespace Kill_the_Norton.Calculations
                     if (bullet.OwnCoordinates.Y + game.Player.Delta.Y >= yTopLimit &&
                         bullet.OwnCoordinates.Y + game.Player.Delta.Y <= yBottomLimit)
                     {
-                        return (true, enemy);
+                        if(bullet.Sender != Sender.Enemy)
+                            return (true, enemy);
                     }
                 }
             }

@@ -169,11 +169,10 @@ namespace Kill_the_Norton.Presenters
                     }
                 }
 
-                var bulletsToDelete = bullets.Where(x => x.Sender == Sender.Player).Select(x => x)
+                var bulletsToDelete = bullets.Select(x => x)
                     .Where(x => GameMath.IsCollided(x, Game, form, enemies).Item1).ToList();
 
-                var result = bullets.Where(x => x.Sender == Sender.Player)
-                    .Select(x => GameMath.IsCollided(x, Game, form, enemies));
+                var result = bullets.Select(x => GameMath.IsCollided(x, Game, form, enemies));
                 foreach (var element in result)
                 {
                     enemies.Remove(element.Item2);
