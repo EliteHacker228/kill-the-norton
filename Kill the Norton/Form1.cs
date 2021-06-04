@@ -28,6 +28,9 @@ namespace Kill_the_Norton
 
             _game = new Game();
             _game.Player = new Player();
+            _game.Player.Cooridantes = new Point(200, 300);
+            _game.Player.Delta = new Point(100, 200);
+            //_game.Player.Cooridantes = new Point(0, 0);
             _game.Level = new Level();
             _game.Player.Sprite = Resources.PlayerSprite;
             _game.Level.Map = new[,]
@@ -35,20 +38,20 @@ namespace Kill_the_Norton
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 1, 1, 1, 9, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 9, 1, 1, 1, 9, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 1, 1, 1, 1, 1, 1, 9, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1, 1, 1, 9, 1, 1, 1, 1, 1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -103,14 +106,15 @@ namespace Kill_the_Norton
 
             Bitmap playerBitmap = new Bitmap(_game.Player.Sprite.Width, _game.Player.Sprite.Height);
             Graphics playerGraphics = Graphics.FromImage(playerBitmap);
+
             playerGraphics.TranslateTransform(playerBitmap.Width / 2, playerBitmap.Height / 2);
             playerGraphics.RotateTransform(_game.Player.Angle);
             playerGraphics.TranslateTransform(-playerBitmap.Width / 2, -playerBitmap.Height / 2);
             playerGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-
             playerGraphics.DrawImage(_game.Player.Sprite, 0, 0);
-            //gameScreen.Graphics.TranslateTransform(_game.Player.Cooridantes.X, _game.Player.Cooridantes.Y);
-            gameScreen.Graphics.DrawImage(playerBitmap, _game.Player.Cooridantes.X - 32, _game.Player.Cooridantes.Y - 32);
+
+            gameScreen.Graphics.DrawImage(playerBitmap, _game.Player.Cooridantes.X - 32,
+                _game.Player.Cooridantes.Y - 32);
 
 
             if (_gamePresenter.bullets.Count != 0)
@@ -122,21 +126,34 @@ namespace Kill_the_Norton
                     //gameScreen.Graphics.DrawLine(Pens.Yellow, _game.Player.Cooridantes, bullet.Target);
                 }
             }
-            
+
             if (_gamePresenter.enemies.Count != 0)
             {
                 foreach (var enemy in _gamePresenter.enemies)
                 {
-                    gameScreen.Graphics.DrawImage(Resources.EnemySprite, enemy.Cooridantes.X -_game.Player.Delta.X, enemy.Cooridantes.Y - _game.Player.Delta.Y);
-                    
-                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X -_game.Player.Delta.X,
-                        enemy.Cooridantes.Y -_game.Player.Delta.Y, 8, 8);
-                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X -_game.Player.Delta.X + 64,
-                        enemy.Cooridantes.Y -_game.Player.Delta.Y, 8, 8);
-                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X -_game.Player.Delta.X,
-                        enemy.Cooridantes.Y -_game.Player.Delta.Y + 64, 8, 8);
-                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X -_game.Player.Delta.X + 64,
-                        enemy.Cooridantes.Y -_game.Player.Delta.Y + 64, 8, 8);
+                    /*gameScreen.Graphics.DrawImage(Resources.EnemySprite, enemy.Cooridantes.X - _game.Player.Delta.X,
+                        enemy.Cooridantes.Y - _game.Player.Delta.Y);*/
+
+                    Bitmap enemyBitmap = new Bitmap(Resources.EnemySprite.Width, Resources.EnemySprite.Height);
+                    Graphics enemyGraphics = Graphics.FromImage(enemyBitmap);
+
+                    enemyGraphics.TranslateTransform(enemyBitmap.Width / 2, enemyBitmap.Height / 2);
+                    enemyGraphics.RotateTransform(enemy.Angle);
+                    enemyGraphics.TranslateTransform(-enemyBitmap.Width / 2, -enemyBitmap.Height / 2);
+                    enemyGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    enemyGraphics.DrawImage(Resources.EnemySprite, 0, 0);
+
+                    gameScreen.Graphics.DrawImage(enemyBitmap, enemy.Cooridantes.X - _game.Player.Delta.X,
+                        enemy.Cooridantes.Y - _game.Player.Delta.Y);
+
+                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X,
+                        enemy.Cooridantes.Y - _game.Player.Delta.Y, 8, 8);
+                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X + 64,
+                        enemy.Cooridantes.Y - _game.Player.Delta.Y, 8, 8);
+                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X,
+                        enemy.Cooridantes.Y - _game.Player.Delta.Y + 64, 8, 8);
+                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X + 64,
+                        enemy.Cooridantes.Y - _game.Player.Delta.Y + 64, 8, 8);
                 }
             }
         }

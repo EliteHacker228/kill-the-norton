@@ -29,24 +29,27 @@ namespace Kill_the_Norton.Calculations
                 var xRightLimit = enemy.Cooridantes.X + 64;
                 var yTopLimit = enemy.Cooridantes.Y;
                 var yBottomLimit = enemy.Cooridantes.Y + 64;
-                if (game.Player.Cooridantes.X + game.Player.Delta.X >= xLeftLimit && game.Player.Cooridantes.X + game.Player.Delta.X <= xRightLimit)
+                if (game.Player.Cooridantes.X + game.Player.Delta.X >= xLeftLimit &&
+                    game.Player.Cooridantes.X + game.Player.Delta.X <= xRightLimit)
                 {
-                    if (game.Player.Cooridantes.Y + game.Player.Delta.Y >= yTopLimit && game.Player.Cooridantes.Y + game.Player.Delta.Y <= yBottomLimit)
+                    if (game.Player.Cooridantes.Y + game.Player.Delta.Y >= yTopLimit &&
+                        game.Player.Cooridantes.Y + game.Player.Delta.Y <= yBottomLimit)
                     {
                         return true;
                     }
                 }
             }
-            
-            if (game.Level.Map[processedY, processedX] == 2)
+
+            if (game.Level.Map[processedY, processedX] == 2 || processedY - 1 == 0 || processedX - 1 == 0
+                || processedX == game.Level.MapWidth - 1 || processedY == game.Level.MapHeight - 1)
                 return true;
             return false;
         }
 
-        public static (bool, Enemy) IsCollided(Bullet bullet, Game game, Form form, List<Enemy> enemies)
+        public static (bool, Enemy) IsCollided(EnemyBullet enemyBullet, Game game, Form form, List<Enemy> enemies)
         {
-            var bulletX = (bullet.OwnCoordinates.X + bullet.SpeedDelta.X);
-            var bulletY = (bullet.OwnCoordinates.Y + bullet.SpeedDelta.Y);
+            var bulletX = (enemyBullet.OwnCoordinates.X + enemyBullet.SpeedDelta.X);
+            var bulletY = (enemyBullet.OwnCoordinates.Y + enemyBullet.SpeedDelta.Y);
 
             /*var processedX = (int) Math.Round((bulletX) / 16);
             var processedY = (int) Math.Round((bulletY) / 16);*/
@@ -56,8 +59,8 @@ namespace Kill_the_Norton.Calculations
 
             form.Controls[2].Text = "Преобразованные координаты пули: " + (int) processedX + " " + (int) processedY +
                                     "\n"
-                                    + "Собственные координаты пули: " + (int) bullet.OwnCoordinates.X + " " +
-                                    (int) bullet.OwnCoordinates.Y;
+                                    + "Собственные координаты пули: " + (int) enemyBullet.OwnCoordinates.X + " " +
+                                    (int) enemyBullet.OwnCoordinates.Y;
 
             foreach (var enemy in enemies)
             {
@@ -65,9 +68,11 @@ namespace Kill_the_Norton.Calculations
                 var xRightLimit = enemy.Cooridantes.X + 64;
                 var yTopLimit = enemy.Cooridantes.Y;
                 var yBottomLimit = enemy.Cooridantes.Y + 64;
-                if (bullet.OwnCoordinates.X + game.Player.Delta.X >= xLeftLimit && bullet.OwnCoordinates.X + game.Player.Delta.X <= xRightLimit)
+                if (enemyBullet.OwnCoordinates.X + game.Player.Delta.X >= xLeftLimit &&
+                    enemyBullet.OwnCoordinates.X + game.Player.Delta.X <= xRightLimit)
                 {
-                    if (bullet.OwnCoordinates.Y + game.Player.Delta.Y >= yTopLimit && bullet.OwnCoordinates.Y + game.Player.Delta.Y <= yBottomLimit)
+                    if (enemyBullet.OwnCoordinates.Y + game.Player.Delta.Y >= yTopLimit &&
+                        enemyBullet.OwnCoordinates.Y + game.Player.Delta.Y <= yBottomLimit)
                     {
                         return (true, enemy);
                     }
@@ -108,10 +113,10 @@ namespace Kill_the_Norton.Calculations
             return false;
         }
 
-        public static PointF GetDelta(Bullet bullet)
+        public static PointF GetDelta(EnemyBullet enemyBullet)
         {
-            var sideX = bullet.Target.X - bullet.OwnCoordinates.X;
-            var sideY = bullet.Target.Y - bullet.OwnCoordinates.Y;
+            var sideX = enemyBullet.Target.X - enemyBullet.OwnCoordinates.X;
+            var sideY = enemyBullet.Target.Y - enemyBullet.OwnCoordinates.Y;
             var k = Math.Sqrt(sideX * sideX + sideY * sideY);
             var deltaX = (float) (sideX / k);
             var deltaY = (float) (sideY / k);

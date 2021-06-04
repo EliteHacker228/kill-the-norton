@@ -16,7 +16,7 @@ namespace Kill_the_Norton.Presenters
         public Form form;
 
         //public Bullet? bullet;
-        public List<Bullet> bullets = new List<Bullet>();
+        public List<EnemyBullet> bullets = new List<EnemyBullet>();
         public List<Enemy> enemies = new List<Enemy>();
 
         public GamePresenter(int[,] map)
@@ -123,7 +123,7 @@ namespace Kill_the_Norton.Presenters
 
         public void MouseClickHandler(object sender, MouseEventArgs e)
         {
-            var bullet = new Bullet();
+            var bullet = new EnemyBullet();
             bullet.Target = new Point(e.X, e.Y);
 
             //bullet.RenderCoordinates = new Point(Game.Player.Cooridantes.X - Game.Player.Delta.X - 64,
@@ -131,7 +131,6 @@ namespace Kill_the_Norton.Presenters
 
             bullet.OwnCoordinates = Game.Player.Cooridantes;
 
-            bullet.Speed = 5;
             bullet.SpeedDelta = GameMath.GetDelta(bullet);
             form.Controls[0].Text = "Координаты клика: " + e.X + ", " + e.Y + "\n"
                                     + "Координаты цели: " + bullet.Target + "\n"
@@ -141,6 +140,20 @@ namespace Kill_the_Norton.Presenters
 
         public void update(object sender, EventArgs e)
         {
+            foreach (var enemy in enemies)
+            {
+                var moddedCoorinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
+                    Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
+                enemy.Angle = (float) GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates);
+                enemy.ShootLatency--;
+
+                if (enemy.ShootLatency == 0)
+                {
+                    enemy.Shoot(Game.Player, bullets);
+                    enemy.ShootLatency = enemy.ShootLatencyLimit;
+                }
+            }
+
             if (bullets.Count != 0)
             {
                 //bullets.RemoveAll(x => GameMath.IsCollided(x, Game, form, enemies).Item1);
