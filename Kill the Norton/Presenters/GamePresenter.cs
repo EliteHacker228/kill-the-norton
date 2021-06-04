@@ -16,7 +16,7 @@ namespace Kill_the_Norton.Presenters
         public Form form;
 
         //public Bullet? bullet;
-        public List<EnemyBullet> bullets = new List<EnemyBullet>();
+        public List<Bullet> bullets = new List<Bullet>();
         public List<Enemy> enemies = new List<Enemy>();
 
         public GamePresenter(int[,] map)
@@ -123,7 +123,7 @@ namespace Kill_the_Norton.Presenters
 
         public void MouseClickHandler(object sender, MouseEventArgs e)
         {
-            var bullet = new EnemyBullet();
+            var bullet = new Bullet(Sender.Player);
             bullet.Target = new Point(e.X, e.Y);
 
             //bullet.RenderCoordinates = new Point(Game.Player.Cooridantes.X - Game.Player.Delta.X - 64,
@@ -169,10 +169,11 @@ namespace Kill_the_Norton.Presenters
                     }
                 }
 
-                var bulletsToDelete = bullets.Select(x => x)
+                var bulletsToDelete = bullets.Where(x => x.Sender == Sender.Player).Select(x => x)
                     .Where(x => GameMath.IsCollided(x, Game, form, enemies).Item1).ToList();
 
-                var result = bullets.Select(x => GameMath.IsCollided(x, Game, form, enemies));
+                var result = bullets.Where(x => x.Sender == Sender.Player)
+                    .Select(x => GameMath.IsCollided(x, Game, form, enemies));
                 foreach (var element in result)
                 {
                     enemies.Remove(element.Item2);

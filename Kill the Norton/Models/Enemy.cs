@@ -24,9 +24,9 @@ namespace Kill_the_Norton.Entities
             Cooridantes = cooridantes;
         }
 
-        public void Shoot(Player player, List<EnemyBullet> bullets)
+        public void Shoot(Player player, List<Bullet> bullets)
         {
-            var bullet = new EnemyBullet();
+            var bullet = new Bullet(Sender.Enemy);
             bullet.Target = player.Cooridantes;
 
             //bullet.RenderCoordinates = new Point(Game.Player.Cooridantes.X - Game.Player.Delta.X - 64,
