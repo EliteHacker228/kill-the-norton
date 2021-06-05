@@ -8,7 +8,7 @@ namespace Kill_the_Norton.Entities
     {
         public Point Cooridantes { get; set; }
         public int Speed { get; set; } = 5;
-
+        public EnemyMover Mover;
         public bool GoLeft { get; set; }
         public bool GoRight { get; set; }
         public bool GoForward { get; set; }
@@ -25,9 +25,10 @@ namespace Kill_the_Norton.Entities
 
         public float Angle { get; set; }
 
-        public Enemy(Point cooridantes)
+        public Enemy(Point cooridantes, EnemyMover Mover)
         {
             Cooridantes = cooridantes;
+            this.Mover = Mover;
         }
 
         public void Shoot(Player player, List<Bullet> bullets)
@@ -46,6 +47,11 @@ namespace Kill_the_Norton.Entities
         }
 
         public void MoveEnemy(Game game)
+        {
+            Mover.MoveEnemy(this, game);
+        }
+
+        /*public void MoveEnemy(Game game)
         {
             if (GoRight)
             {
@@ -106,6 +112,6 @@ namespace Kill_the_Norton.Entities
                     GoLeft = true;
                 }
             }
-        }
+        }*/
     }
 }

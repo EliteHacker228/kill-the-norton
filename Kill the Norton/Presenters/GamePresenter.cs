@@ -27,7 +27,15 @@ namespace Kill_the_Norton.Presenters
                 {
                     if (map[x, y] == 9)
                     {
-                        var enemy = new Enemy(new Point(y * 64, x * 64));
+                        var enemy = new Enemy(new Point(y * 64, x * 64), new PatrolEnemyMover());
+                        enemy.GoLeft = true;
+                        enemies.Add(enemy);
+                        map[x, y] = 1;
+                    }
+
+                    if (map[x, y] == 8)
+                    {
+                        var enemy = new Enemy(new Point(y * 64, x * 64), new SentryEnemyMover());
                         enemy.GoLeft = true;
                         enemies.Add(enemy);
                         map[x, y] = 1;

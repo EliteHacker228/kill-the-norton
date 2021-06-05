@@ -22,14 +22,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Fix enemies &amp; players collisionboxes">
+    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Fix player's collision boxes &amp; refactored enemy moving">
+      <change afterPath="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/CrazyEnemyMover.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/EnemyMover.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/PatrolEnemyMover.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/SentryEnemyMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
     </list>
@@ -51,14 +56,21 @@
       <list>
         <option value="$PROJECT_DIR$/Kill the Norton/Form1.Designer.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" />
-        <option value="$PROJECT_DIR$/Kill the Norton/Form1.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Calculations/EnemyMover.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/PatrolEnemyMover.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/EnemyMover.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/SentryEnemyMover.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Form1.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/CrazyEnemyMover.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1rhjVzwOYcjRBlrHgRJRE9WCSaV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -101,7 +113,7 @@
       <workItem from="1619468824189" duration="3373000" />
       <workItem from="1619529012445" duration="13563000" />
       <workItem from="1619552009046" duration="3558000" />
-      <workItem from="1622905686660" duration="9168000" />
+      <workItem from="1622905686660" duration="11568000" />
     </task>
     <task id="LOCAL-00001" summary="Now bullets can't get through the invisible walls">
       <created>1622907214327</created>
@@ -117,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622919861405</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix player's collision boxes &amp; refactored enemy moving">
+      <created>1622921602054</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622921602054</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,25 +154,26 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Now bullets can't get through the invisible walls" />
     <MESSAGE value="Fix enemies &amp; players collisionboxes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix enemies &amp; players collisionboxes" />
+    <MESSAGE value="Fix player's collision boxes &amp; refactored enemy moving" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix player's collision boxes &amp; refactored enemy moving" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1622920832252">
+    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1622923841611">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1622920832252" />
-    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1622920832252">
+    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1622923841611" />
+    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1622923841611">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1622920832252" />
-    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1622920832252">
+    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1622923841611" />
+    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1622923841611">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1622920832252" />
-    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1622920832252">
+    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1622923841611" />
+    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1622923841611">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1622920832252" />
+    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1622923841611" />
     <state width="1864" height="354" key="GridCell.Tab.1.bottom" timestamp="1619554350547">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -218,9 +238,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1864" height="354" key="GridCell.Tab.4.right/0.0.1920.1032@0.0.1920.1032" timestamp="1619554350547" />
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622919863186">
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622921607220">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622919863186" />
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622921607220" />
   </component>
 </project>
