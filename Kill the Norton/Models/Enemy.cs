@@ -8,8 +8,8 @@ namespace Kill_the_Norton.Entities
     {
         public Point Cooridantes { get; set; }
 
-        public int ShootLatencyLimit = 50; 
-        private int _shootLatency = 50;
+        public int ShootLatencyLimit = 10; 
+        private int _shootLatency = 10;
 
         public int ShootLatency
         {
@@ -32,7 +32,7 @@ namespace Kill_the_Norton.Entities
             //bullet.RenderCoordinates = new Point(Game.Player.Cooridantes.X - Game.Player.Delta.X - 64,
             //    Game.Player.Cooridantes.Y - Game.Player.Delta.Y - 64);
 
-            bullet.OwnCoordinates = new PointF(Cooridantes.X - player.Delta.X, Cooridantes.Y - player.Delta.Y);
+            bullet.OwnCoordinates = new PointF(Cooridantes.X - player.Delta.X + 32, Cooridantes.Y - player.Delta.Y + 32);
 
             bullet.SpeedDelta = GameMath.GetDelta(bullet);
             bullets.Add(bullet);

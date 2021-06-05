@@ -83,7 +83,8 @@ namespace Kill_the_Norton.Calculations
 
             try
             {
-                if (game.Level.Map[(int) processedY, (int) processedX] == 2)
+                if (game.Level.Map[(int) processedY, (int) processedX] == 2 || processedY - 1 == 0 || processedX - 1 == 0
+                    || processedX == game.Level.MapWidth - 1 || processedY == game.Level.MapHeight - 1)
                     return (true, null);
             }
             catch (Exception e)
@@ -113,10 +114,10 @@ namespace Kill_the_Norton.Calculations
                                     (int) bullet.OwnCoordinates.Y;
 
 
-            var xLeftLimit = player.Cooridantes.X + player.Delta.X;
-            var xRightLimit = player.Cooridantes.X + player.Delta.X + 64;
-            var yTopLimit = player.Cooridantes.Y + player.Delta.Y;
-            var yBottomLimit = player.Cooridantes.Y + + player.Delta.Y + 64;
+            var xLeftLimit = player.Cooridantes.X + player.Delta.X - 40;
+            var xRightLimit = player.Cooridantes.X + player.Delta.X + 40;
+            var yTopLimit = player.Cooridantes.Y + player.Delta.Y - 40;
+            var yBottomLimit = player.Cooridantes.Y + player.Delta.Y + 40;
             if (bullet.OwnCoordinates.X + game.Player.Delta.X >= xLeftLimit &&
                 bullet.OwnCoordinates.X + game.Player.Delta.X <= xRightLimit)
             {

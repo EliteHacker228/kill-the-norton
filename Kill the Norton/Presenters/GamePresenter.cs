@@ -144,8 +144,8 @@ namespace Kill_the_Norton.Presenters
 
             if (!Game.Player.IsAlive)
             {
-                Game.Player.Sprite = Resources.TransparentSprite;
-                return;
+                //Game.Player.Sprite = Resources.TransparentSprite;
+                //return;
             }
 
             foreach (var enemy in enemies)
