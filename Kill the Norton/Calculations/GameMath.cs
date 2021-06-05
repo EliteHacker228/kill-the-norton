@@ -15,6 +15,11 @@ namespace Kill_the_Norton.Calculations
             return Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI;
         }
 
+        public static double GetDistanceBetweenTwoPoints(Point p1, Point p2)
+        {
+            return Math.Sqrt((p2.X - p1.X) * (p2.X - p1.X) + (p2.Y - p1.Y) * (p2.Y - p1.Y));
+        }
+
         public static bool IsEnemyCollidedWalls(int dx, int dy, Game game, Enemy enemy)
         {
             var enemyX = (enemy.Cooridantes.X + dx);

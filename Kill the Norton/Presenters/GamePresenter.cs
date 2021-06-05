@@ -162,15 +162,22 @@ namespace Kill_the_Norton.Presenters
             {
                 var moddedCoorinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
                     Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
-                enemy.Angle = (float) GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates);
-                enemy.ShootLatency--;
 
-                enemy.MoveEnemy(Game);
-
-                if (enemy.ShootLatency == 0)
+                /*form.Controls[2].Text = ""+
+                    GameMath.GetDistanceBetweenTwoPoints(Game.Player.Cooridantes, enemy.Cooridantes);*/
+                var moddedPlayerCoordinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X, Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
+                if (GameMath.GetDistanceBetweenTwoPoints(moddedPlayerCoordinates, enemy.Cooridantes) < 640)
                 {
-                    enemy.Shoot(Game.Player, bullets);
-                    enemy.ShootLatency = enemy.ShootLatencyLimit;
+                    enemy.Angle = (float) GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates);
+                    enemy.ShootLatency--;
+
+                    enemy.MoveEnemy(Game);
+
+                    if (enemy.ShootLatency == 0)
+                    {
+                        enemy.Shoot(Game.Player, bullets);
+                        enemy.ShootLatency = enemy.ShootLatencyLimit;
+                    }
                 }
             }
 
