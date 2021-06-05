@@ -140,9 +140,14 @@ namespace Kill_the_Norton.Presenters
 
         public void update(object sender, EventArgs e)
         {
-            if(!Game.Player.IsAlive)
+            form.Invalidate();
+
+            if (!Game.Player.IsAlive)
+            {
+                Game.Player.Sprite = Resources.TransparentSprite;
                 return;
-            
+            }
+
             foreach (var enemy in enemies)
             {
                 var moddedCoorinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
@@ -187,7 +192,7 @@ namespace Kill_the_Norton.Presenters
                     bullets.Remove(bullet);
                 }
 
-                var asdaf = bullets.Where(x => GameMath.IsBulletCollidedWithPlayerOrWalls(x, Game, form))
+                var bulletsHittedPlayer = bullets.Where(x => GameMath.IsBulletCollidedWithPlayerOrWalls(x, Game, form))
                     .Select(x => x);
 
                 foreach (var bullet in bulletsToDelete)
@@ -195,10 +200,16 @@ namespace Kill_the_Norton.Presenters
                     bullets.Remove(bullet);
                 }
 
-                if (asdaf.Count() != 0)
+                if (bulletsHittedPlayer.Count() != 0)
                 {
                     Game.Player.IsAlive = false;
                 }
+
+                bullets.RemoveAll(x => bulletsHittedPlayer.Contains(x));
+                /*foreach (var bullet in bulletsHittedPlayer)
+                {
+                    bullets.Remove(bullet);
+                }*/
             }
 
             if (Game.Player.GoLeft)
