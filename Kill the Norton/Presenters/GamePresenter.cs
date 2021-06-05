@@ -16,6 +16,7 @@ namespace Kill_the_Norton.Presenters
         public Form form;
 
         //public Bullet? bullet;
+        public TimeMachine TimeMachine = new TimeMachine();
         public List<Bullet> bullets = new List<Bullet>();
         public List<Enemy> enemies = new List<Enemy>();
 
@@ -165,7 +166,8 @@ namespace Kill_the_Norton.Presenters
 
                 /*form.Controls[2].Text = ""+
                     GameMath.GetDistanceBetweenTwoPoints(Game.Player.Cooridantes, enemy.Cooridantes);*/
-                var moddedPlayerCoordinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X, Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
+                var moddedPlayerCoordinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
+                    Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
                 if (GameMath.GetDistanceBetweenTwoPoints(moddedPlayerCoordinates, enemy.Cooridantes) < 640)
                 {
                     enemy.Angle = (float) GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates);
@@ -203,7 +205,10 @@ namespace Kill_the_Norton.Presenters
 
                 foreach (var element in result)
                 {
-                    enemies.Remove(element.Item2);
+                    if (enemies.Remove(element.Item2))
+                    {
+                        TimeMachine.ReapedSouls++;
+                    }
                 }
 
                 foreach (var bullet in bulletsToDelete)
