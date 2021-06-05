@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Max\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Max\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Kill the Norton.-1416429877.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Max\RiderProjects\Kill the Norton" t="IncludeFlat">
+    <e p="C:\Users\Max\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Kill the Norton.-31211563.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Max\IdeaProjects\Active Gomes\kill-the-norton" t="IncludeFlat">
       <e p="Kill the Norton" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Calculations" t="Include">
+          <e p="GameMath.cs" t="Include" />
+        </e>
         <e p="Form1.cs" t="Include" />
         <e p="Form1.Designer.cs" t="Include" />
         <e p="Form1.resx" t="Include" />
         <e p="Kill the Norton.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="Bullet.cs" t="Include" />
+          <e p="Enemy.cs" t="Include" />
+          <e p="EnemyBullet.cs" t="Include" />
+          <e p="Game.cs" t="Include" />
+          <e p="Level.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="Resources.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -17,7 +29,11 @@
             </e>
           </e>
         </e>
+        <e p="Presenters" t="Include">
+          <e p="GamePresenter.cs" t="Include" />
+        </e>
         <e p="Program.cs" t="Include" />
+        <e p="Views" t="Include" />
       </e>
       <e p="Kill the Norton.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

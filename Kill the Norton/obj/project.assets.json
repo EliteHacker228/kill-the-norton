@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Max\\RiderProjects\\Kill the Norton\\Kill the Norton\\Kill the Norton.csproj",
+      "projectUniqueName": "C:\\Users\\Max\\IdeaProjects\\Active Gomes\\kill-the-norton\\Kill the Norton\\Kill the Norton.csproj",
       "projectName": "Kill the Norton",
-      "projectPath": "C:\\Users\\Max\\RiderProjects\\Kill the Norton\\Kill the Norton\\Kill the Norton.csproj",
+      "projectPath": "C:\\Users\\Max\\IdeaProjects\\Active Gomes\\kill-the-norton\\Kill the Norton\\Kill the Norton.csproj",
       "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Max\\RiderProjects\\Kill the Norton\\Kill the Norton\\obj\\",
+      "outputPath": "C:\\Users\\Max\\IdeaProjects\\Active Gomes\\kill-the-norton\\Kill the Norton\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Max\\AppData\\Roaming\\NuGet\\NuGet.Config",

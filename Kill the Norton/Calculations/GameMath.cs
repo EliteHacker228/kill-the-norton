@@ -83,8 +83,8 @@ namespace Kill_the_Norton.Calculations
 
             try
             {
-                if (game.Level.Map[(int) processedY, (int) processedX] == 2 || processedY - 1 == 0 || processedX - 1 == 0
-                    || processedX == game.Level.MapWidth - 1 || processedY == game.Level.MapHeight - 1)
+                if (game.Level.Map[(int) processedY, (int) processedX] == 2 || processedY - 1 <= 0 || processedX - 1 <= 0
+                    || processedX >= game.Level.MapWidth - 1 || processedY >= game.Level.MapHeight - 1)
                     return (true, null);
             }
             catch (Exception e)
@@ -132,7 +132,8 @@ namespace Kill_the_Norton.Calculations
 
             try
             {
-                if (game.Level.Map[(int) processedY, (int) processedX] == 2)
+                if (game.Level.Map[(int) processedY, (int) processedX] == 2 || processedY - 1 <= 0 || processedX - 1 <= 0
+                    || processedX >= game.Level.MapWidth - 1 || processedY >= game.Level.MapHeight - 1)
                     return true;
             }
             catch (Exception e)

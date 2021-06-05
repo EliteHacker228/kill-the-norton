@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Max\\RiderProjects\\Kill the Norton\\Kill the Norton\\Kill the Norton.csproj",
+    "projectUniqueName": "C:\\Users\\Max\\IdeaProjects\\Active Gomes\\kill-the-norton\\Kill the Norton\\Kill the Norton.csproj",
     "projectName": "Kill the Norton",
-    "projectPath": "C:\\Users\\Max\\RiderProjects\\Kill the Norton\\Kill the Norton\\Kill the Norton.csproj",
-    "outputPath": "C:\\Users\\Max\\RiderProjects\\Kill the Norton\\Kill the Norton\\obj\\",
+    "projectPath": "C:\\Users\\Max\\IdeaProjects\\Active Gomes\\kill-the-norton\\Kill the Norton\\Kill the Norton.csproj",
+    "outputPath": "C:\\Users\\Max\\IdeaProjects\\Active Gomes\\kill-the-norton\\Kill the Norton\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
