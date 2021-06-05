@@ -14,8 +14,8 @@ namespace Kill_the_Norton.Entities
         public bool GoForward { get; set; }
         public bool GoBackward { get; set; }
 
-        public int ShootLatencyLimit = 10;
-        private int _shootLatency = 10;
+        public int ShootLatencyLimit = 100;
+        private int _shootLatency = 100;
 
         public int ShootLatency
         {
@@ -43,6 +43,69 @@ namespace Kill_the_Norton.Entities
 
             bullet.SpeedDelta = GameMath.GetDelta(bullet);
             bullets.Add(bullet);
+        }
+
+        public void MoveEnemy(Game game)
+        {
+            if (GoRight)
+            {
+                if (!GameMath.IsEnemyCollidedWalls(+Speed, 0, game, this))
+                {
+                    var enemyCoordinates = Cooridantes;
+                    enemyCoordinates.X += Speed;
+                    Cooridantes = enemyCoordinates;
+                }
+                else
+                {
+                    GoRight = false;
+                    GoForward = true;
+                }
+            }
+
+            if (GoLeft)
+            {
+                if (!GameMath.IsEnemyCollidedWalls(-Speed, 0, game, this))
+                {
+                    var enemyCoordinates = Cooridantes;
+                    enemyCoordinates.X -= Speed;
+                    Cooridantes = enemyCoordinates;
+                }
+                else
+                {
+                    GoLeft = false;
+                    GoBackward = true;
+                }
+            }
+
+            if (GoBackward)
+            {
+                if (!GameMath.IsEnemyCollidedWalls(0, -Speed, game, this))
+                {
+                    var enemyCoordinates = Cooridantes;
+                    enemyCoordinates.Y -= Speed;
+                    Cooridantes = enemyCoordinates;
+                }
+                else
+                {
+                    GoBackward = false;
+                    GoRight = true;
+                }
+            }
+
+            if (GoForward)
+            {
+                if (!GameMath.IsEnemyCollidedWalls(0, +Speed, game, this))
+                {
+                    var enemyCoordinates = Cooridantes;
+                    enemyCoordinates.Y += Speed;
+                    Cooridantes = enemyCoordinates;
+                }
+                else
+                {
+                    GoForward = false;
+                    GoLeft = true;
+                }
+            }
         }
     }
 }

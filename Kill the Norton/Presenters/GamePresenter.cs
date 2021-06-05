@@ -157,7 +157,7 @@ namespace Kill_the_Norton.Presenters
                 enemy.Angle = (float) GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates);
                 enemy.ShootLatency--;
 
-                MoveEnemy(enemy);
+                enemy.MoveEnemy(Game);
 
                 if (enemy.ShootLatency == 0)
                 {
@@ -327,7 +327,7 @@ namespace Kill_the_Norton.Presenters
             Cursor.Position = Form1.MousePosition;
         }
 
-        private void MoveEnemy(Enemy enemy)
+        /*private void MoveEnemy(Enemy enemy)
         {
             if (enemy.GoRight)
             {
@@ -396,6 +396,6 @@ namespace Kill_the_Norton.Presenters
                     enemy.GoLeft = true;
                 }
             }
-        }
+        }*/
     }
 }
