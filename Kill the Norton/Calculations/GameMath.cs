@@ -15,13 +15,33 @@ namespace Kill_the_Norton.Calculations
             return Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI;
         }
 
+        public static bool IsEnemyCollidedWalls(int dx, int dy, Game game, Enemy enemy)
+        {
+            var enemyX = (enemy.Cooridantes.X + dx);
+            var enemyY = (enemy.Cooridantes.Y + dy);
+
+            var processedX = (enemyX + 63) / 64;
+            var processedY = (enemyY + 63) / 64;
+            
+            var processedX2 = (enemyX) / 64;
+            var processedY2 = (enemyY) / 64;
+            
+            if (game.Level.Map[processedY, processedX] == 2 || game.Level.Map[processedY2, processedX2] == 2 || processedY - 1 == 0 || processedX - 1 == 0
+                || processedX == game.Level.MapWidth - 1 || processedY == game.Level.MapHeight - 1)
+                return true;
+            return false;
+        }
+
         public static bool IsPlayerCollidedEnemiesOrWalls(int dx, int dy, Game game, List<Enemy> enemies)
         {
             var playerX = (game.Player.Cooridantes.X + dx);
             var playerY = (game.Player.Cooridantes.Y + dy);
 
-            var processedX = (playerX + game.Player.Delta.X) / 64;
-            var processedY = (playerY + game.Player.Delta.Y) / 64;
+            var processedX = (playerX + game.Player.Delta.X - 32) / 64;
+            var processedY = (playerY + game.Player.Delta.Y - 32) / 64;
+            
+            var processedX2 = (playerX + game.Player.Delta.X + 31) / 64;
+            var processedY2 = (playerY + game.Player.Delta.Y + 31) / 64;
 
             foreach (var enemy in enemies)
             {
@@ -40,7 +60,7 @@ namespace Kill_the_Norton.Calculations
                 }
             }
 
-            if (game.Level.Map[processedY, processedX] == 2 || processedY - 1 == 0 || processedX - 1 == 0
+            if (game.Level.Map[processedY, processedX] == 2 || game.Level.Map[processedY2, processedX2] == 2|| processedY - 1 == 0 || processedX - 1 == 0
                 || processedX == game.Level.MapWidth - 1 || processedY == game.Level.MapHeight - 1)
                 return true;
             return false;
@@ -83,7 +103,8 @@ namespace Kill_the_Norton.Calculations
 
             try
             {
-                if (game.Level.Map[(int) processedY, (int) processedX] == 2 || processedY - 1 <= 0 || processedX - 1 <= 0
+                if (game.Level.Map[(int) processedY, (int) processedX] == 2 || processedY - 1 <= 0 ||
+                    processedX - 1 <= 0
                     || processedX >= game.Level.MapWidth - 1 || processedY >= game.Level.MapHeight - 1)
                     return (true, null);
             }
@@ -132,7 +153,8 @@ namespace Kill_the_Norton.Calculations
 
             try
             {
-                if (game.Level.Map[(int) processedY, (int) processedX] == 2 || processedY - 1 <= 0 || processedX - 1 <= 0
+                if (game.Level.Map[(int) processedY, (int) processedX] == 2 || processedY - 1 <= 0 ||
+                    processedX - 1 <= 0
                     || processedX >= game.Level.MapWidth - 1 || processedY >= game.Level.MapHeight - 1)
                     return true;
             }

@@ -27,7 +27,9 @@ namespace Kill_the_Norton.Presenters
                 {
                     if (map[x, y] == 9)
                     {
-                        enemies.Add(new Enemy(new Point(y * 64, x * 64)));
+                        var enemy = new Enemy(new Point(y * 64, x * 64));
+                        enemy.GoLeft = true;
+                        enemies.Add(enemy);
                         map[x, y] = 1;
                     }
                 }
@@ -154,6 +156,8 @@ namespace Kill_the_Norton.Presenters
                     Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
                 enemy.Angle = (float) GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates);
                 enemy.ShootLatency--;
+
+                MoveEnemy(enemy);
 
                 if (enemy.ShootLatency == 0)
                 {
@@ -321,6 +325,77 @@ namespace Kill_the_Norton.Presenters
             }
 
             Cursor.Position = Form1.MousePosition;
+        }
+
+        private void MoveEnemy(Enemy enemy)
+        {
+            if (enemy.GoRight)
+            {
+                if (!GameMath.IsEnemyCollidedWalls(+enemy.Speed, 0, Game, enemy))
+                {
+                    var enemyCoordinates = enemy.Cooridantes;
+                    enemyCoordinates.X += enemy.Speed;
+                    enemy.Cooridantes = enemyCoordinates;
+
+                    form.Invalidate();
+                }
+                else
+                {
+                    enemy.GoRight = false;
+                    enemy.GoForward = true;
+                }
+            }
+
+            if (enemy.GoLeft)
+            {
+                if (!GameMath.IsEnemyCollidedWalls(-enemy.Speed, 0, Game, enemy))
+                {
+                    var enemyCoordinates = enemy.Cooridantes;
+                    enemyCoordinates.X -= enemy.Speed;
+                    enemy.Cooridantes = enemyCoordinates;
+
+                    form.Invalidate();
+                }
+                else
+                {
+                    enemy.GoLeft = false;
+                    enemy.GoBackward = true;
+                }
+            }
+
+            if (enemy.GoBackward)
+            {
+                if (!GameMath.IsEnemyCollidedWalls(0, -enemy.Speed, Game, enemy))
+                {
+                    var enemyCoordinates = enemy.Cooridantes;
+                    enemyCoordinates.Y -= enemy.Speed;
+                    enemy.Cooridantes = enemyCoordinates;
+
+                    form.Invalidate();
+                }
+                else
+                {
+                    enemy.GoBackward = false;
+                    enemy.GoRight = true;
+                }
+            }
+
+            if (enemy.GoForward)
+            {
+                if (!GameMath.IsEnemyCollidedWalls(0, +enemy.Speed, Game, enemy))
+                {
+                    var enemyCoordinates = enemy.Cooridantes;
+                    enemyCoordinates.Y += enemy.Speed;
+                    enemy.Cooridantes = enemyCoordinates;
+
+                    form.Invalidate();
+                }
+                else
+                {
+                    enemy.GoForward = false;
+                    enemy.GoLeft = true;
+                }
+            }
         }
     }
 }
