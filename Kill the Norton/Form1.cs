@@ -115,6 +115,24 @@ namespace Kill_the_Norton
 
             gameScreen.Graphics.DrawImage(playerBitmap, _game.Player.Cooridantes.X - 32,
                 _game.Player.Cooridantes.Y - 32);
+            
+            gameScreen.Graphics.FillEllipse(Brushes.GreenYellow, _game.Player.Cooridantes.X - _game.Player.Delta.X,
+                _game.Player.Cooridantes.Y - _game.Player.Delta.Y, 8, 8);
+            gameScreen.Graphics.FillEllipse(Brushes.GreenYellow, _game.Player.Cooridantes.X - _game.Player.Delta.X + 64,
+                _game.Player.Cooridantes.Y - _game.Player.Delta.Y, 8, 8);
+            gameScreen.Graphics.FillEllipse(Brushes.GreenYellow, _game.Player.Cooridantes.X - _game.Player.Delta.X,
+                _game.Player.Cooridantes.Y - _game.Player.Delta.Y + 64, 8, 8);
+            gameScreen.Graphics.FillEllipse(Brushes.GreenYellow, _game.Player.Cooridantes.X - _game.Player.Delta.X + 64,
+                _game.Player.Cooridantes.Y - _game.Player.Delta.Y + 64, 8, 8);
+            
+            gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X - 32,
+                _game.Player.Cooridantes.Y - 32, 8, 8);
+            gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X + 32,
+                _game.Player.Cooridantes.Y - 32, 8, 8);
+            gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X - 32,
+                _game.Player.Cooridantes.Y + 32, 8, 8);
+            gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X + 32,
+                _game.Player.Cooridantes.Y + 32, 8, 8);
 
 
             if (_gamePresenter.bullets.Count != 0)

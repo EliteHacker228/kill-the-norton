@@ -8,6 +8,8 @@ namespace Kill_the_Norton.Entities
         public Point Cooridantes { get; set; } = new Point(0, 0);
         public Point Delta { get; set; } = new Point(0, 0);
 
+        public bool IsAlive { get; set; } = true;
+
         public bool GoLeft { get; set; }
         public bool GoRight { get; set; }
         public bool GoForward { get; set; }

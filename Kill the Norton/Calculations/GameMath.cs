@@ -15,7 +15,7 @@ namespace Kill_the_Norton.Calculations
             return Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI;
         }
 
-        public static bool IsCollided(int dx, int dy, Game game, List<Enemy> enemies)
+        public static bool IsPlayerCollidedEnemiesOrWalls(int dx, int dy, Game game, List<Enemy> enemies)
         {
             var playerX = (game.Player.Cooridantes.X + dx);
             var playerY = (game.Player.Cooridantes.Y + dy);
@@ -46,7 +46,8 @@ namespace Kill_the_Norton.Calculations
             return false;
         }
 
-        public static (bool, Enemy) IsCollided(Bullet bullet, Game game, Form form, List<Enemy> enemies)
+        public static (bool, Enemy) IsBulletCollidedWithEnemiesOrWalls(Bullet bullet, Game game, Form form,
+            List<Enemy> enemies)
         {
             var bulletX = (bullet.OwnCoordinates.X + bullet.SpeedDelta.X);
             var bulletY = (bullet.OwnCoordinates.Y + bullet.SpeedDelta.Y);
@@ -74,7 +75,7 @@ namespace Kill_the_Norton.Calculations
                     if (bullet.OwnCoordinates.Y + game.Player.Delta.Y >= yTopLimit &&
                         bullet.OwnCoordinates.Y + game.Player.Delta.Y <= yBottomLimit)
                     {
-                        if(bullet.Sender != Sender.Enemy)
+                        if (bullet.Sender != Sender.Enemy)
                             return (true, enemy);
                     }
                 }
@@ -91,6 +92,54 @@ namespace Kill_the_Norton.Calculations
             }
 
             return (false, null);
+        }
+
+        public static bool IsBulletCollidedWithPlayerOrWalls(Bullet bullet, Game game, Form form)
+        {
+            var bulletX = (bullet.OwnCoordinates.X + bullet.SpeedDelta.X);
+            var bulletY = (bullet.OwnCoordinates.Y + bullet.SpeedDelta.Y);
+
+            var player = game.Player;
+
+            /*var processedX = (int) Math.Round((bulletX) / 16);
+            var processedY = (int) Math.Round((bulletY) / 16);*/
+
+            var processedX = (bulletX + game.Player.Delta.X) / 64;
+            var processedY = (bulletY + game.Player.Delta.Y) / 64;
+
+            form.Controls[2].Text = "Преобразованные координаты пули: " + (int) processedX + " " + (int) processedY +
+                                    "\n"
+                                    + "Собственные координаты пули: " + (int) bullet.OwnCoordinates.X + " " +
+                                    (int) bullet.OwnCoordinates.Y;
+
+
+            var xLeftLimit = player.Cooridantes.X + player.Delta.X;
+            var xRightLimit = player.Cooridantes.X + player.Delta.X + 64;
+            var yTopLimit = player.Cooridantes.Y + player.Delta.Y;
+            var yBottomLimit = player.Cooridantes.Y + + player.Delta.Y + 64;
+            if (bullet.OwnCoordinates.X + game.Player.Delta.X >= xLeftLimit &&
+                bullet.OwnCoordinates.X + game.Player.Delta.X <= xRightLimit)
+            {
+                if (bullet.OwnCoordinates.Y + game.Player.Delta.Y >= yTopLimit &&
+                    bullet.OwnCoordinates.Y + game.Player.Delta.Y <= yBottomLimit)
+                {
+                    if (bullet.Sender != Sender.Player)
+                        return true;
+                }
+            }
+
+
+            try
+            {
+                if (game.Level.Map[(int) processedY, (int) processedX] == 2)
+                    return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+            return false;
         }
 
         public static bool IsCollided(int dx, int dy, Game game, Label label)
