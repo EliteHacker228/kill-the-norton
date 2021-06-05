@@ -5,6 +5,7 @@ namespace Kill_the_Norton.Entities
     public class Player
     {
         public int Speed { get; set; } = 5;
+        public static bool IsInvincible { get; set; } = false;
         public Point Cooridantes { get; set; } = new Point(0, 0);
         public Point Delta { get; set; } = new Point(0, 0);
 

@@ -17,11 +17,14 @@ namespace Kill_the_Norton.Entities
         public PointF OwnCoordinates { get; set; }
         public PointF SpeedDelta { get; set; }
         public PointF Delta { get; set; }
-        public int Speed { get; set; } = 5;
+        public static int Speed { get; set; } = 20;
+        public const int SpeedStandard = 20;
+
 
         public Bullet()
         {
         }
+
         public Bullet(Sender sender)
         {
             Sender = sender;

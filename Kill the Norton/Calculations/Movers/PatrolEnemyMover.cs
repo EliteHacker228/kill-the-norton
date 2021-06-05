@@ -8,10 +8,10 @@ namespace Kill_the_Norton.Calculations
         {
             if (enemy.GoRight)
             {
-                if (!GameMath.IsEnemyCollidedWalls(+enemy.Speed, 0, game, enemy))
+                if (!GameMath.IsEnemyCollidedWalls(+Enemy.Speed, 0, game, enemy))
                 {
                     var enemyCoordinates = enemy.Cooridantes;
-                    enemyCoordinates.X += enemy.Speed;
+                    enemyCoordinates.X += Enemy.Speed;
                     enemy.Cooridantes = enemyCoordinates;
                 }
                 else
@@ -23,10 +23,10 @@ namespace Kill_the_Norton.Calculations
 
             if (enemy.GoLeft)
             {
-                if (!GameMath.IsEnemyCollidedWalls(-enemy.Speed, 0, game, enemy))
+                if (!GameMath.IsEnemyCollidedWalls(-Enemy.Speed, 0, game, enemy))
                 {
                     var enemyCoordinates = enemy.Cooridantes;
-                    enemyCoordinates.X -= enemy.Speed;
+                    enemyCoordinates.X -= Enemy.Speed;
                     enemy.Cooridantes = enemyCoordinates;
                 }
                 else
@@ -38,10 +38,10 @@ namespace Kill_the_Norton.Calculations
 
             if (enemy.GoBackward)
             {
-                if (!GameMath.IsEnemyCollidedWalls(0, -enemy.Speed, game, enemy))
+                if (!GameMath.IsEnemyCollidedWalls(0, -Enemy.Speed, game, enemy))
                 {
                     var enemyCoordinates = enemy.Cooridantes;
-                    enemyCoordinates.Y -= enemy.Speed;
+                    enemyCoordinates.Y -= Enemy.Speed;
                     enemy.Cooridantes = enemyCoordinates;
                 }
                 else
@@ -53,10 +53,10 @@ namespace Kill_the_Norton.Calculations
 
             if (enemy.GoForward)
             {
-                if (!GameMath.IsEnemyCollidedWalls(0, +enemy.Speed, game, enemy))
+                if (!GameMath.IsEnemyCollidedWalls(0, +Enemy.Speed, game, enemy))
                 {
                     var enemyCoordinates = enemy.Cooridantes;
-                    enemyCoordinates.Y += enemy.Speed;
+                    enemyCoordinates.Y += Enemy.Speed;
                     enemy.Cooridantes = enemyCoordinates;
                 }
                 else

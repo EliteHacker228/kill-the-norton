@@ -7,7 +7,8 @@ namespace Kill_the_Norton.Entities
     public class Enemy
     {
         public Point Cooridantes { get; set; }
-        public int Speed { get; set; } = 5;
+        public static int Speed { get; set; } = 5;
+        public const int SpeedStandard = 5;
         public EnemyMover Mover;
         public bool GoLeft { get; set; }
         public bool GoRight { get; set; }

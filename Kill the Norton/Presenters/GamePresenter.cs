@@ -109,6 +109,14 @@ namespace Kill_the_Norton.Presenters
             }
         }
 
+        public void keyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 'f')
+            {
+                TimeMachine.StopTime(Game, enemies, bullets);
+            }
+        }
+
         public void keyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.W)
@@ -152,36 +160,40 @@ namespace Kill_the_Norton.Presenters
         public void update(object sender, EventArgs e)
         {
             form.Invalidate();
+            //form.Controls[3].Text = ""+TimeMachine.Check();
+            TimeMachine.Check();
 
             if (!Game.Player.IsAlive)
             {
-                //Game.Player.Sprite = Resources.TransparentSprite;
+                Game.Player.Sprite = Resources.TransparentSprite;
                 //return;
             }
 
-            foreach (var enemy in enemies)
-            {
-                var moddedCoorinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
-                    Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
-
-                /*form.Controls[2].Text = ""+
-                    GameMath.GetDistanceBetweenTwoPoints(Game.Player.Cooridantes, enemy.Cooridantes);*/
-                var moddedPlayerCoordinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
-                    Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
-                if (GameMath.GetDistanceBetweenTwoPoints(moddedPlayerCoordinates, enemy.Cooridantes) < 640)
+            if (!TimeMachine.IsTimeStopped)
+                foreach (var enemy in enemies)
                 {
-                    enemy.Angle = (float) GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates);
-                    enemy.ShootLatency--;
+                    var moddedCoorinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
+                        Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
 
-                    enemy.MoveEnemy(Game);
-
-                    if (enemy.ShootLatency == 0)
+                    /*form.Controls[2].Text = ""+
+                        GameMath.GetDistanceBetweenTwoPoints(Game.Player.Cooridantes, enemy.Cooridantes);*/
+                    var moddedPlayerCoordinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
+                        Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
+                    if (GameMath.GetDistanceBetweenTwoPoints(moddedPlayerCoordinates, enemy.Cooridantes) < 640)
                     {
-                        enemy.Shoot(Game.Player, bullets);
-                        enemy.ShootLatency = enemy.ShootLatencyLimit;
+                        enemy.Angle = (float) (GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates) *
+                                               TimeMachine.SlowingProportion);
+                        enemy.ShootLatency--;
+
+                        enemy.MoveEnemy(Game);
+
+                        if (enemy.ShootLatency == 0)
+                        {
+                            enemy.Shoot(Game.Player, bullets);
+                            enemy.ShootLatency = enemy.ShootLatencyLimit;
+                        }
                     }
                 }
-            }
 
             if (bullets.Count != 0)
             {
@@ -192,8 +204,8 @@ namespace Kill_the_Norton.Presenters
                     if (!GameMath.IsBulletCollidedWithEnemiesOrWalls(bullet, Game, form, enemies).Item1)
                     {
                         var bulletOwnCoordinates = bullet.OwnCoordinates;
-                        bulletOwnCoordinates.X += bullet.SpeedDelta.X * bullet.Speed;
-                        bulletOwnCoordinates.Y += bullet.SpeedDelta.Y * bullet.Speed;
+                        bulletOwnCoordinates.X += bullet.SpeedDelta.X * Bullet.Speed;
+                        bulletOwnCoordinates.Y += bullet.SpeedDelta.Y * Bullet.Speed;
                         bullet.OwnCoordinates = bulletOwnCoordinates;
                     }
                 }
@@ -224,7 +236,7 @@ namespace Kill_the_Norton.Presenters
                     bullets.Remove(bullet);
                 }
 
-                if (bulletsHittedPlayer.Count() != 0)
+                if (bulletsHittedPlayer.Count() != 0 && !Player.IsInvincible)
                 {
                     Game.Player.IsAlive = false;
                 }
