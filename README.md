@@ -25,4 +25,17 @@
 
 ### Gameplay:
 
-![gameplay](https://psv4.userapi.com/c537232/u2000015243/docs/d28/56df28cb8652/file.gif?extra=YrZroMMxIRuPQ0jp2Nd-ZWJ2uZg3_nRxiQFmyAGidVBspVcgIo2o1kSKdTjIJQQjybN2QWcfZVMcLRO9uB_xnoqhFaeTQlo8K6VmlTSXN5BpDByFiOgjNNf-zFdsQSKKrs1P7yOwWElnidlJPqPywoWMiO40)
+Сражайся!
+В игре тебе предстоит выстоять в одиночку против множества вражеских солдат.
+![screenshot](https://sun9-62.userapi.com/impg/bUNzClGcrcnmhhwhz6eP-lA96bJcFWGSgNd9SA/6GugMhlOvmA.jpg?size=996x897&quality=96&sign=84402bef1d4c8e55d763792fef3f15c5&type=album)
+
+
+Двигайся!
+Движение - залог твоего выживания. Медленный = мёртвый.
+![screenshot](https://sun9-33.userapi.com/impg/7aQCxxI07_1g6nRaWW0cXA5PIHc-UM-eVkGr1g/-vgtqsdn9_c.jpg?size=1003x902&quality=96&sign=a961908b7af15d545ef9ad1d8c73f5da&type=album)
+
+
+Время - на твоей стороне!
+Управляй временем для получения тактического превосходства над силами противника. На войне все средства хороши.
+![screenshot](https://psv4.userapi.com/c534536/u168148426/docs/d17/695f933bd108/ezgif-4-6229b959d5be.gif?extra=bJOOpl7Bmz1m37SuIfhGRtat3KnbkzwFvxUQ2h-qgBEuOBL2Dnr-ZXEf5yOC4-6YlI7drNjgz6lDHsFljCcvgcVQL3CAfQALZOJd1xzgDz6m5Nu-ZxwS_8XifEOqr6w9xkCeP-hILN81ilKTC4-ILdA)
+
