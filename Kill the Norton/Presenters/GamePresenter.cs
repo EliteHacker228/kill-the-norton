@@ -178,6 +178,11 @@ namespace Kill_the_Norton.Presenters
                 enemies.Clear();
                 Init(Game.Level.Map, form);
             }
+            
+            if (e.KeyChar == 'j')
+            {
+                TimeMachine.ReapedSouls = 9;
+            }
         }
 
         public void keyDown(object sender, KeyEventArgs e)

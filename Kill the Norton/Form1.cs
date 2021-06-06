@@ -26,6 +26,8 @@ namespace Kill_the_Norton
         public Form1()
         {
             InitializeComponent();
+            
+            this.Cursor = Cursors.Cross;
 
             this.BackgroundImageLayout = ImageLayout.Tile;
             this.BackgroundImage = new Bitmap(Resources.AsphaltSprite);
