@@ -28,6 +28,7 @@
 #### Сражайся!
 
 В игре тебе предстоит выстоять в одиночку против множества вражеских солдат.
+Уничтожь их как можно больше, заряди TS/SD и подчини ход времени себе.
 
 ![screenshot](https://sun9-62.userapi.com/impg/bUNzClGcrcnmhhwhz6eP-lA96bJcFWGSgNd9SA/6GugMhlOvmA.jpg?size=604x544&quality=96&sign=4b276809d9a4c624d7410f5a4fbb2122&type=album)
 
