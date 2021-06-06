@@ -166,7 +166,7 @@ namespace Kill_the_Norton.Presenters
             {
                 TimeMachine.StopTime(Game, enemies, bullets);
             }
-            
+
             if (e.KeyChar == 'r' && !Game.Player.IsAlive)
             {
                 Game.Player.Cooridantes = new Point(200, 250);
@@ -178,11 +178,11 @@ namespace Kill_the_Norton.Presenters
                 enemies.Clear();
                 Init(Game.Level.Map, form);
             }
-            
-            if (e.KeyChar == 'j')
-            {
-                TimeMachine.ReapedSouls = 9;
-            }
+
+            //if (e.KeyChar == 'j')
+            //{
+            //    TimeMachine.ReapedSouls = 9;
+            //}
         }
 
         public void keyDown(object sender, KeyEventArgs e)

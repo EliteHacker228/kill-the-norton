@@ -22,9 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Fix bullets moving &amp; add finish &amp; restart of the game">
+    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="New cursor (cross)">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
@@ -60,9 +59,9 @@
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Player.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Bullet.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Program.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Form1.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" />
       </list>
     </option>
   </component>
@@ -114,7 +113,8 @@
       <workItem from="1619529012445" duration="13563000" />
       <workItem from="1619552009046" duration="3558000" />
       <workItem from="1622905686660" duration="47343000" />
-      <workItem from="1622990543829" duration="1161000" />
+      <workItem from="1622990543829" duration="1312000" />
+      <workItem from="1622993325680" duration="1569000" />
     </task>
     <task id="LOCAL-00001" summary="Now bullets can't get through the invisible walls">
       <created>1622907214327</created>
@@ -207,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622978104661</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="New cursor (cross)">
+      <created>1622991839379</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622991839379</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,25 +245,26 @@
     <MESSAGE value="Get rid of &quot;Local Hero&quot; antipattern (and add sprites)" />
     <MESSAGE value="Add Demo-Level" />
     <MESSAGE value="Fix bullets moving &amp; add finish &amp; restart of the game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bullets moving &amp; add finish &amp; restart of the game" />
+    <MESSAGE value="New cursor (cross)" />
+    <option name="LAST_COMMIT_MESSAGE" value="New cursor (cross)" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1622991715040">
+    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1622995314293">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1622991715040" />
-    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1622991715039">
+    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1622995314293" />
+    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1622995314293">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1622991715039" />
-    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1622991715039">
+    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1622995314293" />
+    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1622995314293">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1622991715039" />
-    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1622991715039">
+    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1622995314293" />
+    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1622995314293">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1622991715039" />
+    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1622995314293" />
     <state width="932" height="354" key="GridCell.Tab.1.bottom" timestamp="1622963817092">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -329,10 +337,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="674" y="167" key="RollbackChangesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1622937228836" />
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622985966946">
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622991848070">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622985966946" />
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622991848070" />
     <state width="969" height="525" key="XDebugger.FullValuePopup" timestamp="1622963724939">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
