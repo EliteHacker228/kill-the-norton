@@ -22,6 +22,7 @@ namespace Kill_the_Norton.Presenters
 
         public GamePresenter(int[,] map)
         {
+            //var a = Resources.path;
             for (var x = 0; x < map.GetLength(0); x++)
             {
                 for (var y = 0; y < map.GetLength(1); y++)

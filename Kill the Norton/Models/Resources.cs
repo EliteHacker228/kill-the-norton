@@ -1,13 +1,16 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.IO;
 
 namespace Kill_the_Norton.Entities
 {
     public class Resources
     {
-        public static readonly Image PlayerSprite = Image.FromFile("C:\\Users\\Max\\Desktop\\turbokillerTR.png");
-        public static readonly Image AsphaltSprite = Image.FromFile("C:\\Users\\Max\\Desktop\\asphaltHR.png");
-        public static readonly Image WallSprite = Image.FromFile("C:\\Users\\Max\\Desktop\\wallblockHR.png");
-        public static readonly Image EnemySprite = Image.FromFile("C:\\Users\\Max\\Desktop\\enemyTR.png");
-        public static readonly Image TransparentSprite = Image.FromFile("C:\\Users\\Max\\Desktop\\transparent.png");
+        public static readonly String Path = Directory.GetCurrentDirectory();
+        public static readonly Image PlayerSprite = Image.FromFile(Path + "\\turbokillerTR.png");
+        public static readonly Image AsphaltSprite = Image.FromFile(Path + "\\asphaltHR.png");
+        public static readonly Image WallSprite = Image.FromFile(Path + "\\wallblockHR.png");
+        public static readonly Image EnemySprite = Image.FromFile(Path + "\\enemyTR.png");
+        public static readonly Image TransparentSprite = Image.FromFile(Path + "\\transparent.png");
     }
 }
