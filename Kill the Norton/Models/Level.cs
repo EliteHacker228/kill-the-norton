@@ -3,8 +3,8 @@
     public class Level
     {
         public int[,] Map { get; set; }
-        public int MapWidth { get; } = 32;
-        public int MapHeight { get; } = 32;
+        public int MapWidth { get; set; }
+        public int MapHeight { get; set; }
         public int SideOfMapObject { get; set; } = 64;
     }
 }

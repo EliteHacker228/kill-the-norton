@@ -248,9 +248,11 @@ namespace Kill_the_Norton.Presenters
                 }*/
             }
 
+            var deltaMultiplier = ((double) Game.Level.MapWidth / 24) + 1;
             if (Game.Player.GoLeft)
             {
-                if (!GameMath.IsPlayerCollidedEnemiesOrWalls(-Game.Player.Speed, 0, Game, enemies))
+                if (!GameMath.IsPlayerCollidedEnemiesOrWalls((int) (-Game.Player.Speed * deltaMultiplier), 0, Game,
+                    enemies))
                 {
                     var playerCooridantes = Game.Player.Cooridantes;
                     playerCooridantes.X -= Game.Player.Speed;
@@ -267,7 +269,7 @@ namespace Kill_the_Norton.Presenters
                         playerCooridantes.X < Game.Level.SideOfMapObject * Game.Level.MapWidth)
                     {
                         var playerDelta = Game.Player.Delta;
-                        playerDelta.X -= Game.Player.Speed;
+                        playerDelta.X -= (int) (Game.Player.Speed * deltaMultiplier);
                         Game.Player.Delta = playerDelta;
                     }
                 }
@@ -277,7 +279,8 @@ namespace Kill_the_Norton.Presenters
 
             if (Game.Player.GoRight)
             {
-                if (!GameMath.IsPlayerCollidedEnemiesOrWalls(+Game.Player.Speed, 0, Game, enemies))
+                if (!GameMath.IsPlayerCollidedEnemiesOrWalls((int) (+Game.Player.Speed * deltaMultiplier), 0, Game,
+                    enemies))
                 {
                     var playerCooridantes = Game.Player.Cooridantes;
                     playerCooridantes.X += Game.Player.Speed;
@@ -294,7 +297,7 @@ namespace Kill_the_Norton.Presenters
                         playerCooridantes.X < Game.Level.SideOfMapObject * Game.Level.MapWidth)
                     {
                         var playerDelta = Game.Player.Delta;
-                        playerDelta.X += Game.Player.Speed;
+                        playerDelta.X += (int) (Game.Player.Speed * deltaMultiplier);
                         Game.Player.Delta = playerDelta;
                     }
 
@@ -304,7 +307,8 @@ namespace Kill_the_Norton.Presenters
 
             if (Game.Player.GoBackward)
             {
-                if (!GameMath.IsPlayerCollidedEnemiesOrWalls(0, +Game.Player.Speed, Game, enemies))
+                if (!GameMath.IsPlayerCollidedEnemiesOrWalls(0, (int) (+Game.Player.Speed * deltaMultiplier), Game,
+                    enemies))
                 {
                     var playerPlayerCooridantes = Game.Player.Cooridantes;
                     playerPlayerCooridantes.Y += Game.Player.Speed;
@@ -321,7 +325,7 @@ namespace Kill_the_Norton.Presenters
                         Game.Player.Cooridantes.Y < Game.Level.SideOfMapObject * Game.Level.MapHeight)
                     {
                         var playerDelta = Game.Player.Delta;
-                        playerDelta.Y += Game.Player.Speed;
+                        playerDelta.Y += (int) (Game.Player.Speed * deltaMultiplier);
                         Game.Player.Delta = playerDelta;
                     }
 
@@ -331,7 +335,8 @@ namespace Kill_the_Norton.Presenters
 
             if (Game.Player.GoForward)
             {
-                if (!GameMath.IsPlayerCollidedEnemiesOrWalls(0, -Game.Player.Speed, Game, enemies))
+                if (!GameMath.IsPlayerCollidedEnemiesOrWalls(0, (int) (-Game.Player.Speed * deltaMultiplier), Game,
+                    enemies))
                 {
                     var playerPlayerCooridantes = Game.Player.Cooridantes;
                     playerPlayerCooridantes.Y -= Game.Player.Speed;
@@ -348,7 +353,7 @@ namespace Kill_the_Norton.Presenters
                         Game.Level.SideOfMapObject * Game.Level.MapHeight)
                     {
                         var playerDelta = Game.Player.Delta;
-                        playerDelta.Y -= Game.Player.Speed;
+                        playerDelta.Y -= (int) (Game.Player.Speed * deltaMultiplier);
                         Game.Player.Delta = playerDelta;
                     }
                 }
