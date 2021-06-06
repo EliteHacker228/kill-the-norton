@@ -20,10 +20,37 @@ namespace Kill_the_Norton.Presenters
         public List<Bullet> bullets = new List<Bullet>();
         public List<Enemy> enemies = new List<Enemy>();
 
-        public GamePresenter(int[,] map)
+        public void Init(int[,] map, Form form)
+        {
+            for (var x = 0; x < map.GetLength(0); x++)
+            {
+                for (var y = 0; y < map.GetLength(1); y++)
+                {
+                    if (map[x, y] == 9)
+                    {
+                        var enemy = new Enemy(new Point(y * 64, x * 64), new PatrolEnemyMover());
+                        enemy.GoLeft = true;
+                        enemies.Add(enemy);
+                        //map[x, y] = 3;
+                    }
+
+                    if (map[x, y] == 8)
+                    {
+                        var enemy = new Enemy(new Point(y * 64, x * 64), new SentryEnemyMover());
+                        enemy.GoLeft = true;
+                        enemies.Add(enemy);
+                        //map[x, y] = 3;
+                    }
+                }
+            }
+
+            form.Controls[0].Text = "На уровне осталось " + enemies.Count + " врагов";
+        }
+
+        public GamePresenter(int[,] map, Form form)
         {
             //var a = Resources.path;
-            for (var x = 0; x < map.GetLength(0); x++)
+            /*for (var x = 0; x < map.GetLength(0); x++)
             {
                 for (var y = 0; y < map.GetLength(1); y++)
                 {
@@ -44,6 +71,9 @@ namespace Kill_the_Norton.Presenters
                     }
                 }
             }
+            
+            form.Controls[0].Text = "На уровне осталось " + enemies.Count + " врагов"; */
+            Init(map, form);
         }
 
         public void DrawMap(Graphics gameGraphic)
@@ -72,7 +102,7 @@ namespace Kill_the_Norton.Presenters
                             GraphicsUnit.Pixel);
                     }
 
-                    if (Game.Level.Map[x, y] == 3)
+                    if (Game.Level.Map[x, y] == 3 || Game.Level.Map[x, y] == 8 || Game.Level.Map[x, y] == 9)
                     {
                         gameGraphic.DrawImage(Resources.FloorSprite1,
                             y * Game.Level.SideOfMapObject - Game.Player.Delta.X,
@@ -136,6 +166,18 @@ namespace Kill_the_Norton.Presenters
             {
                 TimeMachine.StopTime(Game, enemies, bullets);
             }
+            
+            if (e.KeyChar == 'r' && !Game.Player.IsAlive)
+            {
+                Game.Player.Cooridantes = new Point(200, 250);
+                Game.Player.Delta = new Point(100, 150);
+                Game.Player.IsAlive = true;
+                Game.Player.Sprite = Resources.PlayerSprite;
+                TimeMachine.ReapedSouls = 0;
+                bullets.Clear();
+                enemies.Clear();
+                Init(Game.Level.Map, form);
+            }
         }
 
         public void keyDown(object sender, KeyEventArgs e)
@@ -172,9 +214,9 @@ namespace Kill_the_Norton.Presenters
             bullet.OwnCoordinates = Game.Player.Cooridantes;
 
             bullet.SpeedDelta = GameMath.GetDelta(bullet);
-            form.Controls[0].Text = "Координаты клика: " + e.X + ", " + e.Y + "\n"
+            /*form.Controls[0].Text = "Координаты клика: " + e.X + ", " + e.Y + "\n"
                                     + "Координаты цели: " + bullet.Target + "\n"
-                                    + "Дельта скорости: " + bullet.SpeedDelta;
+                                    + "Дельта скорости: " + bullet.SpeedDelta;*/
             bullets.Add(bullet);
         }
 
@@ -186,8 +228,9 @@ namespace Kill_the_Norton.Presenters
 
             if (!Game.Player.IsAlive)
             {
+                form.Controls[0].Text = "Вы погибли!\nНажмите 'R' для перезапуска";
                 Game.Player.Sprite = Resources.TransparentSprite;
-                //return;
+                return;
             }
 
             if (!TimeMachine.IsTimeStopped)
@@ -242,6 +285,12 @@ namespace Kill_the_Norton.Presenters
                     if (enemies.Remove(element.Item2))
                     {
                         TimeMachine.ReapedSouls++;
+                        form.Controls[0].Text = "На уровне осталось " + enemies.Count + " врагов";
+                        if (enemies.Count == 0)
+                        {
+                            form.Controls[0].Text = "На уровне осталось " + enemies.Count + " врагов" + "\n"
+                                                    + "Вы победили!";
+                        }
                     }
                 }
 
@@ -284,8 +333,12 @@ namespace Kill_the_Norton.Presenters
                     foreach (var bullet in bullets)
                     {
                         var coords = bullet.OwnCoordinates;
-                        coords.X += Game.Player.Speed;
+                        coords.X += (float) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
                         bullet.OwnCoordinates = coords;
+
+                        var targetCoords = bullet.Target;
+                        targetCoords.X += (float) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
+                        bullet.Target = targetCoords;
                     }
 
                     if (playerCooridantes.X > 55 &&
@@ -312,8 +365,12 @@ namespace Kill_the_Norton.Presenters
                     foreach (var bullet in bullets)
                     {
                         var coords = bullet.OwnCoordinates;
-                        coords.X -= Game.Player.Speed;
+                        coords.X -= (float) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
                         bullet.OwnCoordinates = coords;
+
+                        var targetCoords = bullet.Target;
+                        targetCoords.X -= (float) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
+                        bullet.Target = targetCoords;
                     }
 
                     if (playerCooridantes.X > Game.Level.SideOfMapObject &&
@@ -340,8 +397,12 @@ namespace Kill_the_Norton.Presenters
                     foreach (var bullet in bullets)
                     {
                         var coords = bullet.OwnCoordinates;
-                        coords.Y -= Game.Player.Speed;
+                        coords.Y -= (float) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
                         bullet.OwnCoordinates = coords;
+
+                        var targetCoords = bullet.Target;
+                        targetCoords.Y -= (float) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
+                        bullet.Target = targetCoords;
                     }
 
                     if (Game.Player.Cooridantes.Y > Game.Level.SideOfMapObject &&
@@ -368,8 +429,12 @@ namespace Kill_the_Norton.Presenters
                     foreach (var bullet in bullets)
                     {
                         var coords = bullet.OwnCoordinates;
-                        coords.Y += Game.Player.Speed;
+                        coords.Y += (float) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
                         bullet.OwnCoordinates = coords;
+
+                        var targetCoords = bullet.Target;
+                        targetCoords.Y += (float) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
+                        bullet.Target = targetCoords;
                     }
 
                     if (Game.Player.Cooridantes.Y > 55 && Game.Player.Cooridantes.Y <

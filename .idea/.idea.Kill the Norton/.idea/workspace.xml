@@ -22,19 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Get rid of &quot;Local Hero&quot; antipattern (and add sprites)">
-      <change afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/carpet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/floorblock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/wallblock.png" afterDir="false" />
+    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Add Demo-Level">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kill the Norton/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Form1.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/Resources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/Resources.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/Bullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/wallblockHR.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
     </list>
@@ -62,12 +57,12 @@
         <option value="$PROJECT_DIR$/Kill the Norton/Program.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/PatrolEnemyMover.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Kill the Norton/Models/Bullet.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/TimeMachine.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Level.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Resources.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Player.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Models/Bullet.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Form1.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" />
       </list>
@@ -120,7 +115,7 @@
       <workItem from="1619468824189" duration="3373000" />
       <workItem from="1619529012445" duration="13563000" />
       <workItem from="1619552009046" duration="3558000" />
-      <workItem from="1622905686660" duration="36839000" />
+      <workItem from="1622905686660" duration="42430000" />
     </task>
     <task id="LOCAL-00001" summary="Now bullets can't get through the invisible walls">
       <created>1622907214327</created>
@@ -199,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622963997987</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add Demo-Level">
+      <created>1622971716440</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622971716440</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,25 +229,26 @@
     <MESSAGE value="Fix background imaging" />
     <MESSAGE value="Get rid of &quot;Local Hero&quot; antipattern" />
     <MESSAGE value="Get rid of &quot;Local Hero&quot; antipattern (and add sprites)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get rid of &quot;Local Hero&quot; antipattern (and add sprites)" />
+    <MESSAGE value="Add Demo-Level" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Demo-Level" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1622971458230">
+    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1622977824339">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1622971458230" />
-    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1622971458230">
+    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1622977824339" />
+    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1622977824339">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1622971458230" />
-    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1622971458230">
+    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1622977824339" />
+    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1622977824339">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1622971458230" />
-    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1622971458230">
+    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1622977824339" />
+    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1622977824339">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1622971458230" />
+    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1622977824339" />
     <state width="932" height="354" key="GridCell.Tab.1.bottom" timestamp="1622963817092">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -318,18 +321,18 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="674" y="167" key="RollbackChangesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1622937228836" />
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622964001464">
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622971784858">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622964001464" />
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622971784858" />
     <state width="969" height="525" key="XDebugger.FullValuePopup" timestamp="1622963724939">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="969" height="525" key="XDebugger.FullValuePopup/0.0.1920.1032@0.0.1920.1032" timestamp="1622963724939" />
-    <state x="564" y="183" width="791" height="666" key="find.popup" timestamp="1622971076463">
+    <state x="564" y="183" width="791" height="666" key="find.popup" timestamp="1622977955112">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="564" y="183" width="791" height="666" key="find.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1622971076463" />
+    <state x="564" y="183" width="791" height="666" key="find.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1622977955112" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -349,13 +352,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs</url>
-          <line>24</line>
+          <line>51</line>
           <properties documentPath="C:\Users\Max\IdeaProjects\Active Gomes\kill-the-norton\Kill the Norton\Presenters\GamePresenter.cs" initialLine="24">
             <startOffsets>
-              <option value="627" />
+              <option value="1598" />
             </startOffsets>
             <endOffsets>
-              <option value="642" />
+              <option value="1613" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />

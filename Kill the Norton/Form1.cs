@@ -102,7 +102,7 @@ namespace Kill_the_Norton
             _game.Level.MapWidth = _game.Level.Map.GetLength(0);
             _game.Level.MapHeight= _game.Level.Map.GetLength(1);
 
-            _gamePresenter = new GamePresenter(_game.Level.Map);
+            _gamePresenter = new GamePresenter(_game.Level.Map, this);
             _gamePresenter.Game = _game;
             _gamePresenter.form = this;
 
@@ -118,8 +118,9 @@ namespace Kill_the_Norton
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
-            //label1.Hide();
-            //label2.Hide();
+            label1.Hide();
+            label2.Hide();
+            label3.Hide();
             pictureBox1.Hide();
 
             DoubleBuffered = true;
@@ -167,22 +168,26 @@ namespace Kill_the_Norton
             gameScreen.Graphics.FillEllipse(Brushes.GreenYellow, _game.Player.Cooridantes.X - _game.Player.Delta.X + 64,
                 _game.Player.Cooridantes.Y - _game.Player.Delta.Y + 64, 8, 8);*/
 
-            gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X - 32,
+            /*gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X - 32,
                 _game.Player.Cooridantes.Y - 32, 8, 8);
             gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X + 32,
                 _game.Player.Cooridantes.Y - 32, 8, 8);
             gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X - 32,
                 _game.Player.Cooridantes.Y + 32, 8, 8);
             gameScreen.Graphics.FillEllipse(Brushes.Red, _game.Player.Cooridantes.X + 32,
-                _game.Player.Cooridantes.Y + 32, 8, 8);
+                _game.Player.Cooridantes.Y + 32, 8, 8);*/
 
 
             if (_gamePresenter.bullets.Count != 0)
             {
                 foreach (var bullet in _gamePresenter.bullets)
                 {
-                    gameScreen.Graphics.FillEllipse(Brushes.Yellow, bullet.OwnCoordinates.X,
-                        bullet.OwnCoordinates.Y, 16, 16);
+                    if (bullet.Sender == Sender.Player)
+                        gameScreen.Graphics.FillEllipse(Brushes.Yellow, bullet.OwnCoordinates.X,
+                            bullet.OwnCoordinates.Y, 16, 16);
+                    else 
+                        gameScreen.Graphics.FillEllipse(Brushes.GreenYellow, bullet.OwnCoordinates.X,
+                            bullet.OwnCoordinates.Y, 16, 16);
                     //gameScreen.Graphics.DrawLine(Pens.Yellow, _game.Player.Cooridantes, bullet.Target);
                 }
             }
@@ -206,14 +211,14 @@ namespace Kill_the_Norton
                     gameScreen.Graphics.DrawImage(enemyBitmap, enemy.Cooridantes.X - _game.Player.Delta.X,
                         enemy.Cooridantes.Y - _game.Player.Delta.Y);
 
-                    gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X,
+                    /*gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X,
                         enemy.Cooridantes.Y - _game.Player.Delta.Y, 8, 8);
                     gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X + 64,
                         enemy.Cooridantes.Y - _game.Player.Delta.Y, 8, 8);
                     gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X,
                         enemy.Cooridantes.Y - _game.Player.Delta.Y + 64, 8, 8);
                     gameScreen.Graphics.FillEllipse(Brushes.Red, enemy.Cooridantes.X - _game.Player.Delta.X + 64,
-                        enemy.Cooridantes.Y - _game.Player.Delta.Y + 64, 8, 8);
+                        enemy.Cooridantes.Y - _game.Player.Delta.Y + 64, 8, 8);*/
                 }
             }
         }

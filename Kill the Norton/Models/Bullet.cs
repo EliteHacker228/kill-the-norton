@@ -10,15 +10,15 @@ namespace Kill_the_Norton.Entities
 
     public class Bullet
     {
-        public Point Target { get; set; }
+        public PointF Target { get; set; }
 
         //public PointF RenderCoordinates { get; set; }
         public Sender Sender { get; }
         public PointF OwnCoordinates { get; set; }
         public PointF SpeedDelta { get; set; }
         public PointF Delta { get; set; }
-        public static int Speed { get; set; } = 20;
-        public const int SpeedStandard = 20;
+        public static int Speed { get; set; } = 10;
+        public const int SpeedStandard = 10;
 
 
         public Bullet()
