@@ -32,7 +32,7 @@ namespace Kill_the_Norton.Presenters
                         var enemy = new Enemy(new Point(y * 64, x * 64), new PatrolEnemyMover());
                         enemy.GoLeft = true;
                         enemies.Add(enemy);
-                        map[x, y] = 1;
+                        map[x, y] = 3;
                     }
 
                     if (map[x, y] == 8)
@@ -40,7 +40,7 @@ namespace Kill_the_Norton.Presenters
                         var enemy = new Enemy(new Point(y * 64, x * 64), new SentryEnemyMover());
                         enemy.GoLeft = true;
                         enemies.Add(enemy);
-                        map[x, y] = 1;
+                        map[x, y] = 3;
                     }
                 }
             }
@@ -65,6 +65,26 @@ namespace Kill_the_Norton.Presenters
                     if (Game.Level.Map[x, y] == 2)
                     {
                         gameGraphic.DrawImage(Resources.WallSprite,
+                            y * Game.Level.SideOfMapObject - Game.Player.Delta.X,
+                            x * Game.Level.SideOfMapObject - Game.Player.Delta.Y,
+                            new Rectangle(new Point(0, 0),
+                                new Size(Game.Level.SideOfMapObject, Game.Level.SideOfMapObject)),
+                            GraphicsUnit.Pixel);
+                    }
+
+                    if (Game.Level.Map[x, y] == 3)
+                    {
+                        gameGraphic.DrawImage(Resources.FloorSprite1,
+                            y * Game.Level.SideOfMapObject - Game.Player.Delta.X,
+                            x * Game.Level.SideOfMapObject - Game.Player.Delta.Y,
+                            new Rectangle(new Point(0, 0),
+                                new Size(Game.Level.SideOfMapObject, Game.Level.SideOfMapObject)),
+                            GraphicsUnit.Pixel);
+                    }
+
+                    if (Game.Level.Map[x, y] == 4)
+                    {
+                        gameGraphic.DrawImage(Resources.CarpetSprite,
                             y * Game.Level.SideOfMapObject - Game.Player.Delta.X,
                             x * Game.Level.SideOfMapObject - Game.Player.Delta.Y,
                             new Rectangle(new Point(0, 0),
@@ -186,7 +206,6 @@ namespace Kill_the_Norton.Presenters
                                                TimeMachine.SlowingProportion);
                         enemy.ShootLatency--;
 
-                        enemy.MoveEnemy(Game);
 
                         if (enemy.ShootLatency == 0)
                         {
@@ -194,6 +213,8 @@ namespace Kill_the_Norton.Presenters
                             enemy.ShootLatency = enemy.ShootLatencyLimit;
                         }
                     }
+
+                    enemy.MoveEnemy(Game);
                 }
 
             if (bullets.Count != 0)
@@ -250,6 +271,7 @@ namespace Kill_the_Norton.Presenters
             }
 
             var deltaMultiplier = ((double) Game.Level.MapWidth / 24) + 1;
+            var deltaScalar = 5;
             if (Game.Player.GoLeft)
             {
                 if (!GameMath.IsPlayerCollidedEnemiesOrWalls((int) (-Game.Player.Speed * deltaMultiplier), 0, Game,
@@ -270,7 +292,7 @@ namespace Kill_the_Norton.Presenters
                         playerCooridantes.X < Game.Level.SideOfMapObject * Game.Level.MapWidth)
                     {
                         var playerDelta = Game.Player.Delta;
-                        playerDelta.X -= (int) (Game.Player.Speed * deltaMultiplier);
+                        playerDelta.X -= (int) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
                         Game.Player.Delta = playerDelta;
                     }
                 }
@@ -298,7 +320,7 @@ namespace Kill_the_Norton.Presenters
                         playerCooridantes.X < Game.Level.SideOfMapObject * Game.Level.MapWidth)
                     {
                         var playerDelta = Game.Player.Delta;
-                        playerDelta.X += (int) (Game.Player.Speed * deltaMultiplier);
+                        playerDelta.X += (int) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
                         Game.Player.Delta = playerDelta;
                     }
 
@@ -326,7 +348,7 @@ namespace Kill_the_Norton.Presenters
                         Game.Player.Cooridantes.Y < Game.Level.SideOfMapObject * Game.Level.MapHeight)
                     {
                         var playerDelta = Game.Player.Delta;
-                        playerDelta.Y += (int) (Game.Player.Speed * deltaMultiplier);
+                        playerDelta.Y += (int) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
                         Game.Player.Delta = playerDelta;
                     }
 
@@ -354,7 +376,7 @@ namespace Kill_the_Norton.Presenters
                         Game.Level.SideOfMapObject * Game.Level.MapHeight)
                     {
                         var playerDelta = Game.Player.Delta;
-                        playerDelta.Y -= (int) (Game.Player.Speed * deltaMultiplier);
+                        playerDelta.Y -= (int) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
                         Game.Player.Delta = playerDelta;
                     }
                 }

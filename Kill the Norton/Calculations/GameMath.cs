@@ -43,17 +43,8 @@ namespace Kill_the_Norton.Calculations
             var playerX = (game.Player.Cooridantes.X + dx);
             var playerY = (game.Player.Cooridantes.Y + dy);
 
-            var processedX = (playerX + game.Player.Delta.X + 31) / 64;
-            var processedY = (playerY + game.Player.Delta.Y + 31) / 64;
-
-            var processedX2 = (playerX + game.Player.Delta.X - 31) / 64;
-            var processedY2 = (playerY + game.Player.Delta.Y - 31) / 64;
-
-            var processedX3 = (playerX + game.Player.Delta.X + 31) / 64;
-            var processedY3 = (playerY + game.Player.Delta.Y - 31) / 64;
-
-            var processedX4 = (playerX + game.Player.Delta.X - 31) / 64;
-            var processedY4 = (playerY + game.Player.Delta.Y + 31) / 64;
+            var processedX = (playerX + game.Player.Delta.X) / 64;
+            var processedY = (playerY + game.Player.Delta.Y) / 64;
 
             foreach (var enemy in enemies)
             {
@@ -72,8 +63,7 @@ namespace Kill_the_Norton.Calculations
                 }
             }
 
-            if (game.Level.Map[processedY, processedX] == 2 || game.Level.Map[processedY2, processedX2] == 2 ||
-                game.Level.Map[processedY3, processedX3] == 2 || game.Level.Map[processedY4, processedX4] == 2 ||
+            if (game.Level.Map[processedY, processedX] == 2 || 
                 processedY - 1 == 0 || processedX - 1 == 0
                 || processedX == game.Level.MapWidth - 1 || processedY == game.Level.MapHeight - 1)
                 return true;
