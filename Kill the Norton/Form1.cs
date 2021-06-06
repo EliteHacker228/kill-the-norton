@@ -27,7 +27,8 @@ namespace Kill_the_Norton
         {
             InitializeComponent();
 
-
+            this.BackgroundImageLayout = ImageLayout.Tile;
+            this.BackgroundImage = new Bitmap(Resources.AsphaltSprite);
             _game = new Game();
             _game.Player = new Player();
             _game.Player.Cooridantes = new Point(200, 300);

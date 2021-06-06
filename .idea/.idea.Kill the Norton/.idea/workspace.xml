@@ -22,15 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Time machine is working correctly now">
+    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Now game works correctly with big map">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/Level.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/Level.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +53,10 @@
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Bullet.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/TimeMachine.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Level.cs" />
-        <option value="$PROJECT_DIR$/Kill the Norton/Form1.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Player.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Form1.cs" />
       </list>
     </option>
   </component>
@@ -112,7 +106,7 @@
       <workItem from="1619468824189" duration="3373000" />
       <workItem from="1619529012445" duration="13563000" />
       <workItem from="1619552009046" duration="3558000" />
-      <workItem from="1622905686660" duration="27776000" />
+      <workItem from="1622905686660" duration="28423000" />
     </task>
     <task id="LOCAL-00001" summary="Now bullets can't get through the invisible walls">
       <created>1622907214327</created>
@@ -163,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622936699647</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Now game works correctly with big map">
+      <created>1622941476850</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1622941476850</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,25 +187,26 @@
     <MESSAGE value="Add distance-based behavior to enemies" />
     <MESSAGE value="Add soul-powered time machine &amp; it's progress bar" />
     <MESSAGE value="Time machine is working correctly now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Time machine is working correctly now" />
+    <MESSAGE value="Now game works correctly with big map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now game works correctly with big map" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1622941094971">
+    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1622941353366">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1622941094971" />
-    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1622941094971">
+    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1622941353366" />
+    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1622941353366">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1622941094971" />
-    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1622941094971">
+    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1622941353366" />
+    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1622941353366">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1622941094971" />
-    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1622941094971">
+    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1622941353366" />
+    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1622941353366">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1622941094971" />
+    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1622941353366" />
     <state width="932" height="354" key="GridCell.Tab.1.bottom" timestamp="1622938391680">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -277,10 +279,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="674" y="167" key="RollbackChangesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1622937228836" />
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622936712620">
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622941480898">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622936712620" />
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622941480898" />
     <state x="564" y="183" width="791" height="666" key="find.popup" timestamp="1622940413242">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
