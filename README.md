@@ -45,3 +45,8 @@
 
 ![screenshot](https://psv4.userapi.com/c534536/u168148426/docs/d17/695f933bd108/ezgif-4-6229b959d5be.gif?extra=bJOOpl7Bmz1m37SuIfhGRtat3KnbkzwFvxUQ2h-qgBEuOBL2Dnr-ZXEf5yOC4-6YlI7drNjgz6lDHsFljCcvgcVQL3CAfQALZOJd1xzgDz6m5Nu-ZxwS_8XifEOqr6w9xkCeP-hILN81ilKTC4-ILdA)
 
+#### Живи. Умри. Повтори
+
+Смерть - это не конец. Всегда можно начать всё с начала нажатием одной кнопки.
+![screenshot](https://sun9-12.userapi.com/impg/iRWtfr0yn3VtBeX1L_n358KoPzKJqEMiXKDL_g/sXlaLbtfUeQ.jpg?size=604x543&quality=96&sign=9a7e7d29f2f8482dd2d0ff1ccb7e25be&type=album)
+
