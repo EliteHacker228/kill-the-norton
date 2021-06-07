@@ -15,8 +15,8 @@ namespace Kill_the_Norton.Entities
         public bool GoForward { get; set; }
         public bool GoBackward { get; set; }
 
-        public int ShootLatencyLimit = 100;
-        private int _shootLatency = 100;
+        public int ShootLatencyLimit = 110;
+        private int _shootLatency = 110;
 
         public int ShootLatency
         {

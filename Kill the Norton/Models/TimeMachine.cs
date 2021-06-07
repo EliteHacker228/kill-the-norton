@@ -24,21 +24,10 @@ namespace Kill_the_Norton.Entities
             {
                 if (value > _reapedSoulsLimit)
                     return;
-                
+
                 ProgressBar.Value = value;
                 _reapedSouls = value;
-                if (_reapedSouls == 3)
-                {
-                    ProgressBar.ForeColor = Color.Red;
-                }
-                else if (_reapedSouls == 6)
-                {
-                    ProgressBar.ForeColor = Color.Yellow;
-                }
-                else if (_reapedSouls == 9)
-                {
-                    ProgressBar.ForeColor = Color.Green;
-                }
+                UpdateProgressBarColor();
             }
         }
 
@@ -82,8 +71,30 @@ namespace Kill_the_Norton.Entities
                 Player.IsInvincible = true;
             }
 
+            UpdateProgressBarColor();
+
             lastStoppingTimestamp = ((DateTimeOffset) DateTime.Now).ToUnixTimeMilliseconds();
             ProgressBar.Value = _reapedSouls;
+        }
+
+        private void UpdateProgressBarColor()
+        {
+            if (_reapedSouls < 3)
+            {
+                ProgressBar.ForeColor = Color.Black;
+            }
+            else if (_reapedSouls >= 3 && _reapedSouls < 6)
+            {
+                ProgressBar.ForeColor = Color.Red;
+            }
+            else if (_reapedSouls >= 6 && _reapedSouls < 9)
+            {
+                ProgressBar.ForeColor = Color.Yellow;
+            }
+            else if (_reapedSouls == 9)
+            {
+                ProgressBar.ForeColor = Color.Green;
+            }
         }
 
         private void SlowIt(double proportion)

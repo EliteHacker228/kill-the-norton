@@ -134,7 +134,7 @@ namespace Kill_the_Norton.Presenters
                 Game.Player.Cooridantes.Y + "\n" +
                 "Дельта игрока: " + Game.Player.Delta.X + " " + Game.Player.Delta.Y;
 
-            form.Invalidate();
+            //form.Invalidate();
         }
 
         public void keyUp(object sender, KeyEventArgs e)
