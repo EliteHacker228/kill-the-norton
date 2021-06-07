@@ -6,7 +6,7 @@ namespace Kill_the_Norton.Entities
     {
         public int Speed { get; set; } = 3;
         public static bool IsInvincible { get; set; } = false;
-        public Point Cooridantes { get; set; } = new Point(0, 0);
+        public Point Cooridnates { get; set; } = new Point(0, 0);
         public Point Delta { get; set; } = new Point(0, 0);
 
         public bool IsAlive { get; set; } = true;

@@ -22,13 +22,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Rid off from developers' hidden abilities">
+    <list default="true" id="882b893a-2961-4d72-9541-03a8458d2e60" name="Default Changelist" comment="Fix lag &amp; progress bar color changing">
+      <change afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kill the Norton/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kill the Norton/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/TimeMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/TimeMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kill the Norton/Models/Resources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Models/Resources.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/asphaltHR.png" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/bin/Debug/netcoreapp3.1/asphaltHR.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kill the Norton/obj/Debug/netcoreapp3.1/Kill the Norton.pdb" afterDir="false" />
     </list>
@@ -55,15 +61,15 @@
         <option value="$PROJECT_DIR$/Kill the Norton/Form1.Designer.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Calculations/Movers/PatrolEnemyMover.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Level.cs" />
-        <option value="$PROJECT_DIR$/Kill the Norton/Models/Resources.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Calculations/GameMath.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Player.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Bullet.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Program.cs" />
-        <option value="$PROJECT_DIR$/Kill the Norton/Form1.cs" />
-        <option value="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/TimeMachine.cs" />
         <option value="$PROJECT_DIR$/Kill the Norton/Models/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Presenters/GamePresenter.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Models/Resources.cs" />
+        <option value="$PROJECT_DIR$/Kill the Norton/Form1.cs" />
       </list>
     </option>
   </component>
@@ -117,7 +123,7 @@
       <workItem from="1622905686660" duration="47343000" />
       <workItem from="1622990543829" duration="1312000" />
       <workItem from="1622993325680" duration="1669000" />
-      <workItem from="1623065674565" duration="1710000" />
+      <workItem from="1623065674565" duration="7783000" />
     </task>
     <task id="LOCAL-00001" summary="Now bullets can't get through the invisible walls">
       <created>1622907214327</created>
@@ -224,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622995481578</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fix lag &amp; progress bar color changing">
+      <created>1623067619681</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1623067619681</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,25 +270,26 @@
     <MESSAGE value="Fix bullets moving &amp; add finish &amp; restart of the game" />
     <MESSAGE value="New cursor (cross)" />
     <MESSAGE value="Rid off from developers' hidden abilities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rid off from developers' hidden abilities" />
+    <MESSAGE value="Fix lag &amp; progress bar color changing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix lag &amp; progress bar color changing" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="932" height="243" key="GridCell.Tab.0.bottom" timestamp="1623067291455">
+    <state width="1864" height="243" key="GridCell.Tab.0.bottom" timestamp="1623073320063">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1623067291455" />
-    <state width="932" height="243" key="GridCell.Tab.0.center" timestamp="1623067291454">
+    <state width="1864" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1623073320063" />
+    <state width="1864" height="243" key="GridCell.Tab.0.center" timestamp="1623073320063">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1623067291454" />
-    <state width="932" height="243" key="GridCell.Tab.0.left" timestamp="1623067291454">
+    <state width="1864" height="243" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1623073320063" />
+    <state width="1864" height="243" key="GridCell.Tab.0.left" timestamp="1623073320063">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1623067291454" />
-    <state width="932" height="243" key="GridCell.Tab.0.right" timestamp="1623067291454">
+    <state width="1864" height="243" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1623073320063" />
+    <state width="1864" height="243" key="GridCell.Tab.0.right" timestamp="1623073320063">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="932" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1623067291454" />
+    <state width="1864" height="243" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1623073320063" />
     <state width="932" height="354" key="GridCell.Tab.1.bottom" timestamp="1622963817092">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -348,18 +362,18 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="674" y="167" key="RollbackChangesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1622937228836" />
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1622995524902">
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2" timestamp="1623067630612">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1622995524902" />
+    <state x="451" y="181" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1623067630612" />
     <state width="969" height="525" key="XDebugger.FullValuePopup" timestamp="1622963724939">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="969" height="525" key="XDebugger.FullValuePopup/0.0.1920.1032@0.0.1920.1032" timestamp="1622963724939" />
-    <state x="564" y="183" width="791" height="666" key="find.popup" timestamp="1622977955112">
+    <state x="564" y="183" width="791" height="666" key="find.popup" timestamp="1623070129656">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="564" y="183" width="791" height="666" key="find.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1622977955112" />
+    <state x="564" y="183" width="791" height="666" key="find.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1623070129656" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

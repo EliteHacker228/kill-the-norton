@@ -40,8 +40,8 @@ namespace Kill_the_Norton.Calculations
 
         public static bool IsPlayerCollidedEnemiesOrWalls(int dx, int dy, Game game, List<Enemy> enemies)
         {
-            var playerX = (game.Player.Cooridantes.X + dx);
-            var playerY = (game.Player.Cooridantes.Y + dy);
+            var playerX = (game.Player.Cooridnates.X + dx);
+            var playerY = (game.Player.Cooridnates.Y + dy);
 
             var processedX = (playerX + game.Player.Delta.X) / 64;
             var processedY = (playerY + game.Player.Delta.Y) / 64;
@@ -52,11 +52,11 @@ namespace Kill_the_Norton.Calculations
                 var xRightLimit = enemy.Cooridantes.X + 64;
                 var yTopLimit = enemy.Cooridantes.Y;
                 var yBottomLimit = enemy.Cooridantes.Y + 64;
-                if (game.Player.Cooridantes.X + game.Player.Delta.X >= xLeftLimit &&
-                    game.Player.Cooridantes.X + game.Player.Delta.X <= xRightLimit)
+                if (game.Player.Cooridnates.X + game.Player.Delta.X >= xLeftLimit &&
+                    game.Player.Cooridnates.X + game.Player.Delta.X <= xRightLimit)
                 {
-                    if (game.Player.Cooridantes.Y + game.Player.Delta.Y >= yTopLimit &&
-                        game.Player.Cooridantes.Y + game.Player.Delta.Y <= yBottomLimit)
+                    if (game.Player.Cooridnates.Y + game.Player.Delta.Y >= yTopLimit &&
+                        game.Player.Cooridnates.Y + game.Player.Delta.Y <= yBottomLimit)
                     {
                         return true;
                     }
@@ -139,10 +139,10 @@ namespace Kill_the_Norton.Calculations
                                     (int) bullet.OwnCoordinates.Y;
 
 
-            var xLeftLimit = player.Cooridantes.X + player.Delta.X - 40;
-            var xRightLimit = player.Cooridantes.X + player.Delta.X + 40;
-            var yTopLimit = player.Cooridantes.Y + player.Delta.Y - 40;
-            var yBottomLimit = player.Cooridantes.Y + player.Delta.Y + 40;
+            var xLeftLimit = player.Cooridnates.X + player.Delta.X - 40;
+            var xRightLimit = player.Cooridnates.X + player.Delta.X + 40;
+            var yTopLimit = player.Cooridnates.Y + player.Delta.Y - 40;
+            var yBottomLimit = player.Cooridnates.Y + player.Delta.Y + 40;
             if (bullet.OwnCoordinates.X + game.Player.Delta.X >= xLeftLimit &&
                 bullet.OwnCoordinates.X + game.Player.Delta.X <= xRightLimit)
             {
@@ -172,8 +172,8 @@ namespace Kill_the_Norton.Calculations
 
         public static bool IsCollided(int dx, int dy, Game game, Label label)
         {
-            var playerX = (game.Player.Cooridantes.X + dx);
-            var playerY = (game.Player.Cooridantes.Y + dy);
+            var playerX = (game.Player.Cooridnates.X + dx);
+            var playerY = (game.Player.Cooridnates.Y + dy);
 
             var processedX = (playerX + game.Player.Delta.X) / 64;
             var processedY = (playerY + game.Player.Delta.Y) / 64;

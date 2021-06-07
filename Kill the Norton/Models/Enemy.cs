@@ -15,8 +15,8 @@ namespace Kill_the_Norton.Entities
         public bool GoForward { get; set; }
         public bool GoBackward { get; set; }
 
-        public int ShootLatencyLimit = 110;
-        private int _shootLatency = 110;
+        public int ShootLatencyLimit = 100;
+        private int _shootLatency = 100;
 
         public int ShootLatency
         {
@@ -35,7 +35,7 @@ namespace Kill_the_Norton.Entities
         public void Shoot(Player player, List<Bullet> bullets)
         {
             var bullet = new Bullet(Sender.Enemy);
-            bullet.Target = player.Cooridantes;
+            bullet.Target = player.Cooridnates;
 
             //bullet.RenderCoordinates = new Point(Game.Player.Cooridantes.X - Game.Player.Delta.X - 64,
             //    Game.Player.Cooridantes.Y - Game.Player.Delta.Y - 64);

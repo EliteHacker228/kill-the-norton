@@ -82,7 +82,7 @@ namespace Kill_the_Norton.Presenters
             {
                 for (var y = 0; y < Game.Level.MapHeight; y++)
                 {
-                    if (Game.Level.Map[x, y] == 1)
+                    /*if (Game.Level.Map[x, y] == 1)
                     {
                         gameGraphic.DrawImage(Resources.AsphaltSprite,
                             y * Game.Level.SideOfMapObject - Game.Player.Delta.X,
@@ -90,7 +90,7 @@ namespace Kill_the_Norton.Presenters
                             new Rectangle(new Point(0, 0),
                                 new Size(Game.Level.SideOfMapObject, Game.Level.SideOfMapObject)),
                             GraphicsUnit.Pixel);
-                    }
+                    }*/
 
                     if (Game.Level.Map[x, y] == 2)
                     {
@@ -127,11 +127,11 @@ namespace Kill_the_Norton.Presenters
 
         public void OnMouseMove(object sender, MouseEventArgs e)
         {
-            Game.Player.Angle = (float) GameMath.GetAngle(Game.Player.Cooridantes, new Point(e.X, e.Y));
+            Game.Player.Angle = (float) GameMath.GetAngle(Game.Player.Cooridnates, new Point(e.X, e.Y));
             form.Controls[1].Text =
                 "Координаты мыши: " + e.X + " " + e.Y + ", Угол: " + " " + Game.Player.Angle + "\n" +
-                "Координацты игрока: " + Game.Player.Cooridantes.X + " " +
-                Game.Player.Cooridantes.Y + "\n" +
+                "Координацты игрока: " + Game.Player.Cooridnates.X + " " +
+                Game.Player.Cooridnates.Y + "\n" +
                 "Дельта игрока: " + Game.Player.Delta.X + " " + Game.Player.Delta.Y;
 
             //form.Invalidate();
@@ -169,7 +169,7 @@ namespace Kill_the_Norton.Presenters
 
             if (e.KeyChar == 'r' && !Game.Player.IsAlive)
             {
-                Game.Player.Cooridantes = new Point(200, 250);
+                Game.Player.Cooridnates = new Point(200, 250);
                 Game.Player.Delta = new Point(100, 150);
                 Game.Player.IsAlive = true;
                 Game.Player.Sprite = Resources.PlayerSprite;
@@ -216,7 +216,7 @@ namespace Kill_the_Norton.Presenters
             //bullet.RenderCoordinates = new Point(Game.Player.Cooridantes.X - Game.Player.Delta.X - 64,
             //    Game.Player.Cooridantes.Y - Game.Player.Delta.Y - 64);
 
-            bullet.OwnCoordinates = Game.Player.Cooridantes;
+            bullet.OwnCoordinates = Game.Player.Cooridnates;
 
             bullet.SpeedDelta = GameMath.GetDelta(bullet);
             /*form.Controls[0].Text = "Координаты клика: " + e.X + ", " + e.Y + "\n"
@@ -241,13 +241,13 @@ namespace Kill_the_Norton.Presenters
             if (!TimeMachine.IsTimeStopped)
                 foreach (var enemy in enemies)
                 {
-                    var moddedCoorinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
-                        Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
+                    var moddedCoorinates = new Point(Game.Player.Cooridnates.X + Game.Player.Delta.X,
+                        Game.Player.Cooridnates.Y + Game.Player.Delta.Y);
 
                     /*form.Controls[2].Text = ""+
                         GameMath.GetDistanceBetweenTwoPoints(Game.Player.Cooridantes, enemy.Cooridantes);*/
-                    var moddedPlayerCoordinates = new Point(Game.Player.Cooridantes.X + Game.Player.Delta.X,
-                        Game.Player.Cooridantes.Y + Game.Player.Delta.Y);
+                    var moddedPlayerCoordinates = new Point(Game.Player.Cooridnates.X + Game.Player.Delta.X,
+                        Game.Player.Cooridnates.Y + Game.Player.Delta.Y);
                     if (GameMath.GetDistanceBetweenTwoPoints(moddedPlayerCoordinates, enemy.Cooridantes) < 640)
                     {
                         enemy.Angle = (float) (GameMath.GetAngle(enemy.Cooridantes, moddedCoorinates) *
@@ -331,9 +331,9 @@ namespace Kill_the_Norton.Presenters
                 if (!GameMath.IsPlayerCollidedEnemiesOrWalls((int) (-Game.Player.Speed * deltaMultiplier), 0, Game,
                     enemies))
                 {
-                    var playerCooridantes = Game.Player.Cooridantes;
+                    var playerCooridantes = Game.Player.Cooridnates;
                     playerCooridantes.X -= Game.Player.Speed;
-                    Game.Player.Cooridantes = playerCooridantes;
+                    Game.Player.Cooridnates = playerCooridantes;
 
                     foreach (var bullet in bullets)
                     {
@@ -363,9 +363,9 @@ namespace Kill_the_Norton.Presenters
                 if (!GameMath.IsPlayerCollidedEnemiesOrWalls((int) (+Game.Player.Speed * deltaMultiplier), 0, Game,
                     enemies))
                 {
-                    var playerCooridantes = Game.Player.Cooridantes;
+                    var playerCooridantes = Game.Player.Cooridnates;
                     playerCooridantes.X += Game.Player.Speed;
-                    Game.Player.Cooridantes = playerCooridantes;
+                    Game.Player.Cooridnates = playerCooridantes;
 
                     foreach (var bullet in bullets)
                     {
@@ -395,9 +395,9 @@ namespace Kill_the_Norton.Presenters
                 if (!GameMath.IsPlayerCollidedEnemiesOrWalls(0, (int) (+Game.Player.Speed * deltaMultiplier), Game,
                     enemies))
                 {
-                    var playerPlayerCooridantes = Game.Player.Cooridantes;
+                    var playerPlayerCooridantes = Game.Player.Cooridnates;
                     playerPlayerCooridantes.Y += Game.Player.Speed;
-                    Game.Player.Cooridantes = playerPlayerCooridantes;
+                    Game.Player.Cooridnates = playerPlayerCooridantes;
 
                     foreach (var bullet in bullets)
                     {
@@ -410,8 +410,8 @@ namespace Kill_the_Norton.Presenters
                         bullet.Target = targetCoords;
                     }
 
-                    if (Game.Player.Cooridantes.Y > Game.Level.SideOfMapObject &&
-                        Game.Player.Cooridantes.Y < Game.Level.SideOfMapObject * Game.Level.MapHeight)
+                    if (Game.Player.Cooridnates.Y > Game.Level.SideOfMapObject &&
+                        Game.Player.Cooridnates.Y < Game.Level.SideOfMapObject * Game.Level.MapHeight)
                     {
                         var playerDelta = Game.Player.Delta;
                         playerDelta.Y += (int) (Game.Player.Speed * deltaMultiplier) + deltaScalar;
@@ -427,9 +427,9 @@ namespace Kill_the_Norton.Presenters
                 if (!GameMath.IsPlayerCollidedEnemiesOrWalls(0, (int) (-Game.Player.Speed * deltaMultiplier), Game,
                     enemies))
                 {
-                    var playerPlayerCooridantes = Game.Player.Cooridantes;
+                    var playerPlayerCooridantes = Game.Player.Cooridnates;
                     playerPlayerCooridantes.Y -= Game.Player.Speed;
-                    Game.Player.Cooridantes = playerPlayerCooridantes;
+                    Game.Player.Cooridnates = playerPlayerCooridantes;
 
                     foreach (var bullet in bullets)
                     {
@@ -442,7 +442,7 @@ namespace Kill_the_Norton.Presenters
                         bullet.Target = targetCoords;
                     }
 
-                    if (Game.Player.Cooridantes.Y > 55 && Game.Player.Cooridantes.Y <
+                    if (Game.Player.Cooridnates.Y > 55 && Game.Player.Cooridnates.Y <
                         Game.Level.SideOfMapObject * Game.Level.MapHeight)
                     {
                         var playerDelta = Game.Player.Delta;
